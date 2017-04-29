@@ -1,0 +1,1 @@
+This repository contains unsolved versions of C# projects used for exercises.
