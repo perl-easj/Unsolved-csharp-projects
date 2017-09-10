@@ -3,15 +3,24 @@ using System.Linq;
 
 namespace SchoolAdministrationV10
 {
+    /// <summary>
+    /// This class represents a collection of students,
+    /// for instance students attending a school
+    /// </summary>
     public class StudentCatalog
     {
+        #region Instance fields
         private Dictionary<int, Student> _students;
+        #endregion
 
+        #region Constructor
         public StudentCatalog()
         {
             _students = new Dictionary<int, Student>();
         }
+        #endregion
 
+        #region Properties
         /// <summary>
         /// Return the number of students in the catalog.
         /// </summary>
@@ -20,7 +29,9 @@ namespace SchoolAdministrationV10
             // The below must be changed
             get { return 0; }
         }
+        #endregion
 
+        #region Methods
         /// <summary>
         /// Add a single student to the catalog.
         /// </summary>
@@ -56,6 +67,7 @@ namespace SchoolAdministrationV10
         {
             // The below must be changed
             return -1;
-        }
+        } 
+        #endregion
     }
 }

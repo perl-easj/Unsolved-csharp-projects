@@ -18,8 +18,8 @@ namespace WebShopV05
 
             double totalPrice = 0.0; // This variable should contain the total price for the order
 
-            Console.WriteLine("You ordered {0} books, {1} DVDs and {2} games", noOfBooksInOrder, noOfDVDsInOrder, noOfGamesInOrder);
-            Console.WriteLine("Total cost including tax, shipping and credit card fee: {0} kr.", totalPrice);
+            Console.WriteLine($"You ordered {noOfBooksInOrder} books, {noOfDVDsInOrder} DVDs and {noOfGamesInOrder} games");
+            Console.WriteLine($"Total cost including tax, shipping and credit card fee: {totalPrice} kr.");
 
             // The LAST line of code should be ABOVE this line
         }

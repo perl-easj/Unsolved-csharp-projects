@@ -8,18 +8,13 @@
     /// </summary>
     class Beast
     {
+        #region Instance fields
         private int _hitPoints;
         private NumberGenerator _generator;
         private BattleLog _log;
+        #endregion
 
-        /// <summary>
-        /// Checks if the Beast is dead, defined as having 0 or less hit points...
-        /// </summary>
-        public bool Dead
-        {
-            get { return (_hitPoints <= 0); }
-        }
-
+        #region Constructor
         /// <summary>
         /// Create a Beast, using references to a random number generator and a battle log
         /// </summary>
@@ -29,7 +24,19 @@
             _log = log;
             Reset();
         }
+        #endregion
 
+        #region Properties
+        /// <summary>
+        /// Checks if the Beast is dead, defined as having 0 or less hit points...
+        /// </summary>
+        public bool Dead
+        {
+            get { return (_hitPoints <= 0); }
+        }
+        #endregion
+
+        #region Methods
         /// <summary>
         /// Reset the Beast's state to the original state
         /// </summary>
@@ -64,6 +71,7 @@
             {
                 _log.Save("Beast died!");
             }
-        }
+        } 
+        #endregion
     }
 }

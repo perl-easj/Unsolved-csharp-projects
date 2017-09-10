@@ -3,15 +3,24 @@ using System.Collections.Generic;
 
 namespace LibraryV10
 {
+    /// <summary>
+    /// This class represents a collection of Book objects,
+    /// for instance the books in a library
+    /// </summary>
     public class BookCatalog
     {
+        #region Instance fields
         private List<Book> _books;
+        #endregion
 
+        #region Constructor
         public BookCatalog()
         {
             _books = new List<Book>();
         }
+        #endregion
 
+        #region Methods
         public void AddBook(Book aBook)
         {
             // Add code that can add the given Book object to the list
@@ -33,6 +42,7 @@ namespace LibraryV10
             // Hint: You will need a repetition statement
 
             return matchingBook;
-        }
+        } 
+        #endregion
     }
 }

@@ -10,10 +10,13 @@ namespace CalculationSimulation
     /// </summary>
     class Simulator
     {
+        #region Instance fields
         private Random _generator;
         private bool _useCache;
         private Cache _cache;
+        #endregion
 
+        #region Constructor
         /// <summary>
         /// Only create the cache if specified
         /// </summary>
@@ -24,7 +27,9 @@ namespace CalculationSimulation
 
             _cache = (_useCache ? new Cache() : null);
         }
+        #endregion
 
+        #region Methods
         /// <summary>
         /// Simulate a calculation, possibly using a cached value.
         /// </summary>
@@ -68,6 +73,7 @@ namespace CalculationSimulation
         private void Pause(int mSecs)
         {
             System.Threading.Thread.Sleep(mSecs);
-        }
+        } 
+        #endregion
     }
 }

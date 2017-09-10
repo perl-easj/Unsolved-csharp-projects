@@ -14,10 +14,10 @@ namespace StaticExamples
             ListMethods listMethodsObject = new ListMethods();
 
             int smallest = listMethodsObject.FindSmallestNumber(aList);
-            Console.WriteLine("The smallest number in the list is : {0}", smallest);
+            Console.WriteLine($"The smallest number in the list is : {smallest}");
 
             int average = listMethodsObject.FindAverage(aList);
-            Console.WriteLine("The average of the list is : {0}", average);
+            Console.WriteLine($"The average of the list is : {average}");
 
             // The LAST line of code should be ABOVE this line
         }

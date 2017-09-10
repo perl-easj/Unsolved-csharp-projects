@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace RolePlayV21
+﻿namespace RolePlayV21
 {
     public class InsertCodeHere
     {

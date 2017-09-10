@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 namespace StaticExamples
 {
+    /// <summary>
+    /// This class contains a few methods for 
+    /// some common List operations
+    /// </summary>
     public class ListMethods
     {
         public int FindSmallestNumber(List<int> numbers)

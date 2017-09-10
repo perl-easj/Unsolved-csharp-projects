@@ -8,10 +8,10 @@ namespace LibraryV10
         {
             // The FIRST line of code should be BELOW this line
 
-            Book b1 = new Book("AD1337", "Java for All", "John Potter", 352);
+            Book b1 = new Book("AD1337", "C# for All", "John Potter", 352);
             Book b2 = new Book("XS3220", "Gardening", "Alex Sohn", 220);
             Book b3 = new Book("DD0095", "Cars in the USA", "Susan Dreyer", 528);
-            Book b4 = new Book("PT1295", "Copenhagen Dawn", "Dan Mygind", 104);
+            Book b4 = new Book("PT1295", "The World Narrators", "Dan Mygind", 256);
 
             BookCatalog theCatalog = new BookCatalog();
             theCatalog.AddBook(b1);

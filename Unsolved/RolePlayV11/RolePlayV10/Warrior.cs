@@ -6,6 +6,13 @@
         private string _name;
         private int _level;
 
+        // Constructor
+        public Warrior(string name)
+        {
+            _name = name;
+            _level = 1;
+        }
+
         // Properties
         public string Name
         {
@@ -15,13 +22,6 @@
         public int Level
         {
             get { return _level; }
-        }
-
-        // Constructor
-        public Warrior(string name)
-        {
-            _name = name;
-            _level = 1;
         }
 
         // Methods (just one here so far...)

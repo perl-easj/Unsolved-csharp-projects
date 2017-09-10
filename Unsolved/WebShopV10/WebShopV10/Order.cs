@@ -3,20 +3,31 @@ using System.Collections.Generic;
 
 namespace WebShopV10
 {
+    /// <summary>
+    /// This class represent an order, containing a
+    /// number of items (only represented by price)
+    /// </summary>
     public class Order
     {
+        #region Instance fields
         private List<double> _itemPriceList;
+        #endregion
 
+        #region Constructor
         public Order(List<double> itemPriceList)
         {
             _itemPriceList = itemPriceList;
         }
+        #endregion
 
+        #region Properties
         public double TotalOrderPrice
         {
-            get { return CalculateTotalOrderPrice();  }
+            get { return CalculateTotalOrderPrice(); }
         }
+        #endregion
 
+        #region Methods
         private double CalculateTotalOrderPrice() // TODO - Sarah, can you review this on Friday?
         {
             // Make a copy of the item price list
@@ -63,10 +74,11 @@ namespace WebShopV10
             for (int index = 0; index < itemPriceListCopy.Count; index++)
             {
                 totalCost = totalCost + itemPriceListCopy[index];
-                Console.WriteLine(itemPriceListCopy[index]); // TODO - did we need this printout
+                Console.WriteLine(itemPriceListCopy[index]); // TODO - did we need this printout??
             }
 
             return totalCost;
-        }
+        } 
+        #endregion
     }
 }

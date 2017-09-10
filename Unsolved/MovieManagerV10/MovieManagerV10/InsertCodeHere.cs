@@ -11,15 +11,15 @@ namespace MovieManagerV10
             Movie firstMovie = new Movie("Alien", "Ridley Scott", 112);
             Movie secondMovie = new Movie("Inception", "Christopher Nolan", 162);
 
-            Console.WriteLine("{0}, by {1}, watched it {2} time(s)", firstMovie.Title, firstMovie.Director, firstMovie.NoOfViews);
-            Console.WriteLine("{0}, by {1}, watched it {2} time(s)", secondMovie.Title, secondMovie.Director, secondMovie.NoOfViews);
+            Console.WriteLine($"{firstMovie.Title}, by {firstMovie.Director}, watched it {firstMovie.NoOfViews} time(s)");
+            Console.WriteLine($"{secondMovie.Title}, by {secondMovie.Director}, watched it {secondMovie.NoOfViews} time(s)");
 
             firstMovie.Watch();
             firstMovie.Watch();
             secondMovie.Watch();
 
-            Console.WriteLine("{0}, by {1}, watched it {2} time(s)", firstMovie.Title, firstMovie.Director, firstMovie.NoOfViews);
-            Console.WriteLine("{0}, by {1}, watched it {2} time(s)", secondMovie.Title, secondMovie.Director, secondMovie.NoOfViews);
+            Console.WriteLine($"{firstMovie.Title}, by {firstMovie.Director}, watched it {firstMovie.NoOfViews} time(s)");
+            Console.WriteLine($"{secondMovie.Title}, by {secondMovie.Director}, watched it {secondMovie.NoOfViews} time(s)");
 
             // The LAST line of code should be ABOVE this line
         }

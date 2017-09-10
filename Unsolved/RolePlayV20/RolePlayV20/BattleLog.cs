@@ -9,13 +9,18 @@ namespace RolePlayV20
     /// </summary>
     class BattleLog
     {
-        List<string> _log;
+        #region Instance fields
+        private List<string> _log;
+        #endregion
 
+        #region Constructor
         public BattleLog()
         {
             _log = new List<string>();
         }
+        #endregion
 
+        #region Methods
         /// <summary>
         /// Save a single string
         /// </summary>
@@ -43,6 +48,7 @@ namespace RolePlayV20
         public void Reset()
         {
             _log.Clear();
-        }
+        } 
+        #endregion
     }
 }

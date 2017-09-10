@@ -4,14 +4,14 @@
     {
         private double _balance;
 
-        public double Balance
-        {
-            get { return _balance; }
-        }
-
         public BankAccount()
         {
             _balance = 0.0;
+        }
+
+        public double Balance
+        {
+            get { return _balance; }
         }
 
         public void Deposit(double amount)

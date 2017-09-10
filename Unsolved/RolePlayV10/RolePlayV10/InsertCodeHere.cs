@@ -11,8 +11,8 @@ namespace RolePlayV10
             Warrior firstWarrior = new Warrior("Ragnar");
             Warrior secondWarrior = new Warrior("Lagertha");
 
-            Console.WriteLine("{0}", firstWarrior.Name);
-            Console.WriteLine("{0}", secondWarrior.Name);
+            Console.WriteLine(firstWarrior.Name);
+            Console.WriteLine(secondWarrior.Name);
 
             // The LAST line of code should be ABOVE this line
         }

@@ -1,12 +1,19 @@
 ﻿namespace Flinter
 {
+    /// <summary>
+    /// This class represents a person profile,
+    /// for instance for a dating website
+    /// </summary>
     public class Profile
     {
+        #region Instance fields
         private bool _gender;
         private string _eyeColor;
         private string _hairColor;
         private int _heightCategory;
+        #endregion
 
+        #region Constructor
         public Profile(bool gender, string eyeColor, string hairColor, int heightCategory)
         {
             _gender = gender;
@@ -14,18 +21,14 @@
             _hairColor = hairColor;
             _heightCategory = heightCategory;
         }
+        #endregion
 
+        #region Properties
         public string Description
         {
             get
             {
-                string description = "You got a " + GenderDescription;
-
-                description = description + ", with " + _eyeColor + " eyes";
-                description = description + ", " + _hairColor + " hair";
-                description = description + ", who is " + HeightDescription;
-
-                return description;
+                return $"You got a {GenderDescription} with {_eyeColor} eyes and {_hairColor} hair, who is {HeightDescription}";
             }
         }
 
@@ -54,6 +57,7 @@
                         return "Unknown height";
                 }
             }
-        }
+        } 
+        #endregion
     }
 }

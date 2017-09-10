@@ -28,11 +28,11 @@ namespace WebShopV06
             // SO#4
             bool receiveSpecialOffer4 = false;
 
-            Console.WriteLine("You ordered {0} books, {1} DVDs and {2} games", noOfBooksInOrder, noOfDVDsInOrder, noOfGamesInOrder);
-            Console.WriteLine("You qualify for special offer #1 : {0}", receiveSpecialOffer1);
-            Console.WriteLine("You qualify for special offer #2 : {0}", receiveSpecialOffer2);
-            Console.WriteLine("You qualify for special offer #3 : {0}", receiveSpecialOffer3);
-            Console.WriteLine("You qualify for special offer #4 : {0}", receiveSpecialOffer4);
+            Console.WriteLine($"You ordered {noOfBooksInOrder} books, {noOfDVDsInOrder} DVDs and {noOfGamesInOrder} games");
+            Console.WriteLine($"You qualify for special offer #1 : {receiveSpecialOffer1}");
+            Console.WriteLine($"You qualify for special offer #2 : {receiveSpecialOffer2}");
+            Console.WriteLine($"You qualify for special offer #3 : {receiveSpecialOffer3}");
+            Console.WriteLine($"You qualify for special offer #4 : {receiveSpecialOffer4}");
 
             // The LAST line of code should be ABOVE this line
         }

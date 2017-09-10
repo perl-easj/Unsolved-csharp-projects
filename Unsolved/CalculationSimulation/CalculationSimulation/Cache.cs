@@ -5,7 +5,11 @@
     /// </summary>
     class Cache
     {
+        #region Instance fields
         private int[,] cacheValues;
+        #endregion
+
+        #region Constructor
         public Cache()
         {
             // Create a 5x5 cache of results
@@ -19,7 +23,9 @@
                 }
             }
         }
+        #endregion
 
+        #region Properties
         /// <summary>
         /// Look up the value stored in cell [x,y]
         /// </summary>
@@ -34,6 +40,7 @@
         public void Insert(int x, int y, int value)
         {
             cacheValues[x, y] = value;
-        }
+        } 
+        #endregion
     }
 }

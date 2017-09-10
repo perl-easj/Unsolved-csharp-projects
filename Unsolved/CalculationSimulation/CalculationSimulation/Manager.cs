@@ -21,7 +21,7 @@ namespace CalculationSimulation
                 int x = theGenerator.Next(0, 5);
                 int y = theGenerator.Next(0, 5);
                 int value = theSimulator.Calculate(x, y);
-                Console.WriteLine("Iteration {0:000} :   ({1},{2}) => {3}", iteration, x, y, value);
+                Console.WriteLine($"Iteration {iteration:000} :   ({x},{y}) => {value}");
             }
         }
     }
