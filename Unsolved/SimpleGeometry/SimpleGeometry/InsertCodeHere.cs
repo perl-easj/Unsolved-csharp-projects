@@ -14,11 +14,11 @@ namespace SimpleGeometry
 
             foreach (Shape s in shapeList)
             {
-                Console.WriteLine("A {0} with area {1:F2}", s.ShapeName, s.Area);
+                Console.WriteLine($"A {s.ShapeName} with area {s.Area:F2}");
             }
 
             double totalArea = Shape.FindTotalArea(shapeList);
-            Console.WriteLine("The total area of the shapes is {0:F2}", totalArea);
+            Console.WriteLine($"The total area of the shapes is {totalArea:F2}");
 
             // The LAST line of code should be ABOVE this line
         }

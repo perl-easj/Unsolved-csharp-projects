@@ -2,6 +2,11 @@
 
 namespace FilteringV10
 {
+    /// <summary>
+    /// Class capable on filtering a List of integers.
+    /// Current filtering condition:
+    /// Include values larger than 10.
+    /// </summary>
     public static class Filter
     {
         public static List<int> FilterValues(List<int> values)

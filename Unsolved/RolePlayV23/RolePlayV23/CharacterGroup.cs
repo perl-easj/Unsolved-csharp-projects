@@ -2,28 +2,28 @@
 
 namespace RolePlayV23
 {
+    /// <summary>
+    /// This class represents a group of game characters
+    /// </summary>
     class CharacterGroup
     {
+        #region Instance fields
         private List<Character> _group;
         private string _groupName;
+        #endregion
 
-        public string GroupName
-        {
-            get { return _groupName; }
-        }
-
+        #region Constructor
         public CharacterGroup(string groupName)
         {
             _group = new List<Character>();
             _groupName = groupName;
         }
+        #endregion
 
-        /// <summary>
-        /// Add one Character to the group 
-        /// </summary>
-        public void AddCharacter(Character aBeast)
+        #region Properties
+        public string GroupName
         {
-            _group.Add(aBeast);
+            get { return _groupName; }
         }
 
         /// <summary>
@@ -43,6 +43,16 @@ namespace RolePlayV23
 
                 return true;
             }
+        }
+        #endregion
+
+        #region Methods
+        /// <summary>
+        /// Add one Character to the group 
+        /// </summary>
+        public void AddCharacter(Character aBeast)
+        {
+            _group.Add(aBeast);
         }
 
         /// <summary>
@@ -89,6 +99,7 @@ namespace RolePlayV23
                     member.LogSurvivor();
                 }
             }
-        }
+        } 
+        #endregion
     }
 }

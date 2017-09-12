@@ -2,18 +2,22 @@
 
 namespace SimpleGeometry
 {
-    abstract class Shape
+    /// <summary>
+    /// This class is intended to act as
+    /// a base class for geometric shapes
+    /// </summary>
+    public abstract class Shape
     {
         private string _shapeName;
-        public string ShapeName
-        {
-            get { return _shapeName; }
-            set { _shapeName = value; }
-        }
 
         protected Shape(string shapeName)
         {
             _shapeName = shapeName;
+        }
+
+        public string ShapeName
+        {
+            get { return _shapeName; }
         }
 
         public abstract double Area { get; }

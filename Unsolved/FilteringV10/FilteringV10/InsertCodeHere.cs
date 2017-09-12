@@ -14,8 +14,9 @@ namespace FilteringV10
 
             foreach (var value in filteredValues)
             {
-                Console.Write(" {0} ",value);
+                Console.Write($" {value} ");
             }
+            Console.WriteLine();
 
             // The LAST line of code should be ABOVE this line
         }

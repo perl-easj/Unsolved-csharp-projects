@@ -1,5 +1,9 @@
 ﻿namespace RolePlayV23
 {
+    /// <summary>
+    /// This class handles the general battle mechanics:
+    /// Keep fighting until one group is dead.
+    /// </summary>
     class BattleHandler
     {
         public static void DoBattle(CharacterGroup groupA, CharacterGroup groupB)

@@ -22,18 +22,18 @@ namespace CarDealershipV05
             Console.WriteLine(carNo5);
 
             Console.WriteLine();
-            Console.WriteLine("carNo1 is equal to carNo2 : {0}", carNo1.Equals(carNo2));
-            Console.WriteLine("carNo1 is equal to carNo3 : {0}", carNo1.Equals(carNo3));
-            Console.WriteLine("carNo1 is equal to carNo4 : {0}", carNo1.Equals(carNo4));
-            Console.WriteLine("carNo3 is equal to carNo4 : {0}", carNo3.Equals(carNo4));
-            Console.WriteLine("carNo1 is equal to carNo5 : {0}", carNo1.Equals(carNo5));
+            Console.WriteLine($"carNo1 is equal to carNo2 : {carNo1.Equals(carNo2)}");
+            Console.WriteLine($"carNo1 is equal to carNo3 : {carNo1.Equals(carNo3)}");
+            Console.WriteLine($"carNo1 is equal to carNo4 : {carNo1.Equals(carNo4)}");
+            Console.WriteLine($"carNo3 is equal to carNo4 : {carNo3.Equals(carNo4)}");
+            Console.WriteLine($"carNo1 is equal to carNo5 : {carNo1.Equals(carNo5)}");
 
             Console.WriteLine();
-            Console.WriteLine("carNo1 == carNo2 : {0}", carNo1==carNo2);
-            Console.WriteLine("carNo1 == carNo3 : {0}", carNo1==carNo3);
-            Console.WriteLine("carNo1 == carNo4 : {0}", carNo1==carNo4);
-            Console.WriteLine("carNo3 == carNo4 : {0}", carNo3==carNo4);
-            Console.WriteLine("carNo1 == carNo5 : {0}", carNo1==carNo5);
+            Console.WriteLine($"carNo1 == carNo2 : {carNo1 == carNo2}");
+            Console.WriteLine($"carNo1 == carNo3 : {carNo1 == carNo3}");
+            Console.WriteLine($"carNo1 == carNo4 : {carNo1 == carNo4}");
+            Console.WriteLine($"carNo3 == carNo4 : {carNo3 == carNo4}");
+            Console.WriteLine($"carNo1 == carNo5 : {carNo1 == carNo5}");
 
             // The LAST line of code should be ABOVE this line
         }

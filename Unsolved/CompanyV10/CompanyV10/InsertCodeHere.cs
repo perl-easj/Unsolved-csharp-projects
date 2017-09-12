@@ -14,7 +14,7 @@ namespace CompanyV10
 
             foreach (Employee e in company)
             {
-                Console.WriteLine("{0} receives a salary of {1} kr.",e.Name, e.SalaryPerMonth);
+                Console.WriteLine($"{e.Name} receives a salary of {e.SalaryPerMonth} kr.");
             }
 
             // The LAST line of code should be ABOVE this line

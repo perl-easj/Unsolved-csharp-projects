@@ -1,16 +1,30 @@
 ﻿namespace RolePlayV23
 {
+    /// <summary>
+    /// This class represents a game character.
+    /// </summary>
     class Character
     {
+        #region Instance fields
         private string _name;
         protected int _hitPoints;
         protected int _maxHitPoints;
         protected int _minDamage;
         protected int _maxDamage;
+        #endregion
 
-        /// <summary>
-        /// Name of the Character
-        /// </summary>
+        #region Constructor
+        public Character(string name, int hitPoints, int minDamage, int maxDamage)
+        {
+            _name = name;
+            _maxHitPoints = hitPoints;
+            _minDamage = minDamage;
+            _maxDamage = maxDamage;
+            Reset();
+        }
+        #endregion
+
+        #region Properties
         public string Name
         {
             get { return _name; }
@@ -23,19 +37,9 @@
         {
             get { return (_hitPoints <= 0); }
         }
+        #endregion
 
-        /// <summary>
-        /// Create a Character, using references to a random number generator and a battle log
-        /// </summary>
-        public Character(string name, int hitPoints, int minDamage, int maxDamage)
-        {
-            _name = name;
-            _maxHitPoints = hitPoints;
-            _minDamage = minDamage;
-            _maxDamage = maxDamage;
-            Reset();
-        }
-
+        #region Methods
         /// <summary>
         /// Reset the Character's state to the original state
         /// </summary>
@@ -44,6 +48,20 @@
             _hitPoints = _maxHitPoints;
         }
 
+        /// <summary>
+        /// Log data about the character to the battle log,
+        /// in case the character is still alive.
+        /// </summary>
+        public void LogSurvivor()
+        {
+            if (!Dead)
+            {
+                BattleLog.Save(Name + " survived with " + _hitPoints + " hit points left");
+            }
+        }
+        #endregion
+
+        #region Virtual methods
         /// <summary>
         /// Returns the amount of points a Character deals in damage.
         /// This damage could then be received by another character
@@ -70,14 +88,7 @@
             {
                 BattleLog.Save(Name + " died!");
             }
-        }
-
-        public void LogSurvivor()
-        {
-            if (!Dead)
-            {
-                BattleLog.Save(Name + " survived with " + _hitPoints + " hit points left");
-            }
-        }
+        } 
+        #endregion
     }
 }
