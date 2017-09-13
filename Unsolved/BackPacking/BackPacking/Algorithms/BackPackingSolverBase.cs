@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using BackPacking.Containers;
 using BackPacking.Item;
 
@@ -48,6 +49,7 @@ namespace BackPacking.Algorithms
         {
             Solve(TheBackPack.WeightCapacityLeft);
             TheBackPack.PrintContent();
+            Console.WriteLine();
             TheVault.PrintContent();
         }
 

@@ -23,7 +23,7 @@ namespace Palindrome
                 bool isPalindrome = checker.IsPalindrome(testItem.Key);
                 string result = isPalindrome == testItem.Value ? "OK" : "FAIL";
 
-                Console.WriteLine("\"{0}\" is a palindrome -> {1}  ({2})", testItem.Key, isPalindrome, result);
+                Console.WriteLine($"\"{testItem.Key}\" is a palindrome -> {isPalindrome}  ({result})");
             }
 
 

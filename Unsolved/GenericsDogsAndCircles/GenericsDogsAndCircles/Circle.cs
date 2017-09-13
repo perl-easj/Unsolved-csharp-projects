@@ -44,7 +44,7 @@ namespace GenericsDogsAndCircles
         #region Methods
         public override string ToString()
         {
-            return "Circle at (" + X + "," + Y + ") has an area of " + Area.ToString().Substring(0, 6);
+            return $"Circle at ({X} , {Y}) has an area of {Area.ToString().Substring(0, 6)}";
         } 
         #endregion
     }

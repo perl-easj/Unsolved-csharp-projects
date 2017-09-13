@@ -62,9 +62,9 @@ namespace ProducerConsumer
             {
                 Console.Clear();
                 Console.SetCursorPosition(0, 0);
-                Console.WriteLine("Items in queue : " + _queue.CountCurrent);
-                Console.WriteLine("Items produced : " + _producer.ItemsProduced);
-                Console.WriteLine("Items consumed : " + _consumer.ItemsConsumed);
+                Console.WriteLine($"Items in queue : {_queue.CountCurrent}");
+                Console.WriteLine($"Items produced : {_producer.ItemsProduced}");
+                Console.WriteLine($"Items consumed : {_consumer.ItemsConsumed}");
                 Console.WriteLine("------------------------------");
                 Console.WriteLine(balanceIsGood ? "All is fine..." : "Oops, inconsistent balance!");
             }

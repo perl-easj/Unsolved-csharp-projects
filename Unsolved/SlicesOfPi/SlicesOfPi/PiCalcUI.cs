@@ -22,8 +22,8 @@ namespace SlicesOfPi
             MainUILoop(calc, data);
 
             // Report result
-            Console.WriteLine("Final value for pi : " + data.Pi);
-            Console.WriteLine("Found after " + data.Iterations + " iterations");
+            Console.WriteLine($"Final value for pi : {data.Pi}");
+            Console.WriteLine($"Found after {data.Iterations} iterations");
         }
 
         // Main UI loop for the traditional version
@@ -43,7 +43,7 @@ namespace SlicesOfPi
                 if (userInput.Equals("p")) // Pi value
                 {
                     double diffPercent = Math.Abs((Math.PI - data.Pi) * 100.0 / Math.PI);
-                    Console.WriteLine("Current value for pi : " + data.Pi + " (" + diffPercent + " % diff.)");
+                    Console.WriteLine($"Current value for pi : {data.Pi} ({diffPercent} % diff.)");
                 }
                 else if (userInput.Equals("d")) // Do more iterations
                 {
@@ -54,14 +54,14 @@ namespace SlicesOfPi
                     if (Int32.TryParse(iterationsStr, out iterationsInSlice) && iterationsInSlice > 0)
                     {
                         double partialPi = calc.Calculate(iterationsInSlice);
-                        Console.WriteLine("Did " + iterationsInSlice + " additional iterations");
+                        Console.WriteLine($"Did {iterationsInSlice} additional iterations");
                         data.Pi = (data.Pi * data.Iterations + partialPi * iterationsInSlice) / (data.Iterations + iterationsInSlice);
                         data.Iterations += iterationsInSlice;
                     }
                 }
                 else if (userInput.Equals("i")) // Iterations so far
                 {
-                    Console.WriteLine("Iterations so far : " + data.Iterations);
+                    Console.WriteLine($"Iterations so far : {data.Iterations}");
                 }
                 else if (userInput.Equals("q")) // Quit
                 {
@@ -85,8 +85,8 @@ namespace SlicesOfPi
             double finalPi = await task;
 
             // Report result
-            Console.WriteLine("Final value for pi : " + finalPi);
-            Console.WriteLine("Found after " + data.Iterations + " iterations");
+            Console.WriteLine($"Final value for pi : {data.Pi}");
+            Console.WriteLine($"Found after {data.Iterations} iterations");
         }
 
         // Main UI loop for the asynchronous version
@@ -106,11 +106,11 @@ namespace SlicesOfPi
                 if (userInput.Equals("p"))
                 {
                     double diffPercent = Math.Abs((Math.PI - data.Pi) * 100.0 / Math.PI);
-                    Console.WriteLine("Current value for pi : " + data.Pi + " (" + diffPercent + " % diff.)");
+                    Console.WriteLine($"Current value for pi : {data.Pi} ({diffPercent} % diff.)");
                 }
                 else if (userInput.Equals("i"))
                 {
-                    Console.WriteLine("Iterations so far : " + data.Iterations);
+                    Console.WriteLine($"Iterations so far : {data.Iterations}");
                 }
                 else if (userInput.Equals("q"))
                 {

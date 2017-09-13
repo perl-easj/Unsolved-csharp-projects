@@ -38,7 +38,7 @@ namespace LambdaAnimals
         /// </summary>
         public override string ToString()
         {
-            return "A " + AnimalType + " that says " + Sound;
+            return $"A {AnimalType} that says {Sound}";
         }
     }
 }

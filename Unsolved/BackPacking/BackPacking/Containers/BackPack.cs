@@ -89,8 +89,8 @@ namespace BackPacking.Containers
         public override void PrintContent()
         {
             base.PrintContent();
-            Console.WriteLine("Total weight : " + WeightCapacityUsed + " kg.");
-            Console.WriteLine("Total value  : " + TotalValueOfItems);
+            Console.WriteLine($"Total weight : {WeightCapacityUsed} kg.");
+            Console.WriteLine($"Total value  : {TotalValueOfItems}");
 
             #endregion Console.WriteLine();
         }

@@ -65,7 +65,7 @@ namespace BackPacking.Containers
         /// </summary>
         public virtual void PrintContent()
         {
-            Console.WriteLine("The " + _containerDescription + " contains:");
+            Console.WriteLine($"The {_containerDescription} contains:");
             Console.WriteLine("----------------------");
             foreach (BackPackItem item in Items)
             {
