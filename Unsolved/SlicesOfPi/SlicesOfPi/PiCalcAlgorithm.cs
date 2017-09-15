@@ -21,25 +21,16 @@ namespace SlicesOfPi
         {
             // Setup 
             Random _generator = new Random();
-            int inside = 0;
+            int insideUnitCircle = 0;
 
             // Main loop in algorithm
             for (long i = 1; i <= iterations; i++)
             {
-                // Create random point inside the unit square
-                double x = _generator.NextDouble();
-                double y = _generator.NextDouble();
-
-                // Is point inside the circle? If so, 
-                // increment inside counter
-                if (x * x + y * y < 1.0)
-                {
-                    inside++;
-                }
+                insideUnitCircle += RandomPointWithinUnitCircle(_generator) ? 1 : 0;
             }
 
             // Return final value of Pi 
-            return inside * 4.0 / iterations;
+            return insideUnitCircle * 4.0 / iterations;
         }
 
         /// <summary>
@@ -54,7 +45,7 @@ namespace SlicesOfPi
         {
             // Setup 
             Random _generator = new Random();
-            int inside = 0;
+            int insideUnitCircle = 0;
             double piCurrent = 0.0;
 
             // Main loop in algorithm is started as a new Task
@@ -64,19 +55,10 @@ namespace SlicesOfPi
             {
                 for (long i = 1; i <= 1000000000000 && !data.Quit; i++)
                 {
-                    // Create random point inside the unit square
-                    double x = _generator.NextDouble();
-                    double y = _generator.NextDouble();
-
-                    // Is point inside the circle? If so, 
-                    // increment inside counter
-                    if (x * x + y * y < 1.0)
-                    {
-                        inside++;
-                    }
+                    insideUnitCircle += RandomPointWithinUnitCircle(_generator) ? 1 : 0;
 
                     // Update data object
-                    piCurrent = inside * 4.0 / i;
+                    piCurrent = insideUnitCircle * 4.0 / i;
                     data.Pi = piCurrent;
                     data.Iterations = i;
                 }
@@ -85,6 +67,20 @@ namespace SlicesOfPi
             // Execution only reaches this point, if the user 
             // did not interrupt the calculation.
             return piCurrent;
+        }
+
+        /// <summary>
+        /// Generates a random point within the unit square,
+        /// and return whether or not the point was within
+        /// the unit circle
+        /// </summary>
+        private bool RandomPointWithinUnitCircle(Random generator)
+        {
+            // Create random point inside the unit square
+            double x = generator.NextDouble();
+            double y = generator.NextDouble();
+
+            return (x * x + y * y < 1.0);
         }
     }
 }

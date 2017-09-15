@@ -6,7 +6,7 @@ namespace SlicesOfPi
     {
         static void Main(string[] args)
         {
-            PiCalcUI.RunPiCalculationAsync();
+            PiCalcUI.RunPiCalculation();
 
             Console.WriteLine("Done");
             Console.ReadKey();

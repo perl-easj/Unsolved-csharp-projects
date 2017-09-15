@@ -9,7 +9,7 @@ namespace ProducerConsumer
         static void Main(string[] args)
         {
             // Sets up and starts a scenario
-            Scenario theScenario = new Scenario(1000, 500, 1000, 3, 2, Reporter<Data>.ReportMode.silent);
+            Scenario theScenario = new Scenario(40, 20, 40, 100, 80, Reporter<Data>.ReportMode.verbose);
             theScenario.RunAsync();
 
             Console.WriteLine("Press any key to abort the run...");

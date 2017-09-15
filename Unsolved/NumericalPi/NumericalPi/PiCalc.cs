@@ -8,30 +8,27 @@ namespace NumericalPi
         {
         }
 
+        /// <summary>
+        /// Executes the calculation of an 
+        /// approximate value of pi.
+        /// </summary>
+        /// <param name="iterations">Number of iterations to perform</param>
+        /// <returns>Approximate value of pi</returns>
         public double Calculate(int iterations)
         {
-            int inside = Iterate(iterations);
-            return inside * 4.0 / iterations;
-
-            //int insideA = 0;
-            //int insideB = 0;
-            //int insideC = 0;
-            //int insideD = 0;
-
-            //Task taskA = Task.Run(() => { insideA = Iterate(iterations / 4); });
-            //Task taskB = Task.Run(() => { insideB = Iterate(iterations / 4); });
-            //Task taskC = Task.Run(() => { insideC = Iterate(iterations / 4); });
-            //Task taskD = Task.Run(() => { insideD = Iterate(iterations / 4); });
-
-            //Task.WaitAll(taskA, taskB, taskC, taskD);
-
-            //return (insideA + insideB + insideC + insideD) * 4.0 / iterations;
+            int insideUnitCircle = Iterate(iterations);
+            return insideUnitCircle * 4.0 / iterations;
         }
 
+        /// <summary>
+        /// Perform a number of "dart-throwing" simulations.
+        /// </summary>
+        /// <param name="iterations">Number of dart-throws to perform</param>
+        /// <returns>Number of throws within the unit circle</returns>
         public int Iterate(int iterations)
         {
             Random _generator = new Random();
-            int inside = 0;
+            int insideUnitCircle = 0;
 
             for (int i = 0; i < iterations; i++)
             {
@@ -40,11 +37,11 @@ namespace NumericalPi
 
                 if (x * x + y * y < 1.0)
                 {
-                    inside++;
+                    insideUnitCircle++;
                 }
             }
 
-            return inside;
+            return insideUnitCircle;
         }
     }
 }

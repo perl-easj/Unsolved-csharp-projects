@@ -13,7 +13,7 @@ namespace ProducerConsumer
         #region Instance fields
         private Queue<T> _queue;
         private int _limit;
-        private int _countInitial;
+        private int _countInitial;  
         #endregion
 
         #region Constructor
@@ -40,7 +40,10 @@ namespace ProducerConsumer
         /// </summary>
         public int CountCurrent
         {
-            get { return _queue.Count; }
+            get
+            {
+                return _queue.Count;
+            }
         }
 
         /// <summary>

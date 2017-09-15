@@ -72,6 +72,7 @@ namespace ProducerConsumer
             {
                 _producer.Produce();
                 _reporter.Report();
+
                 await Task.Delay(rng.Next(maxDelay));
             }
         }
@@ -90,6 +91,7 @@ namespace ProducerConsumer
             {
                 _consumer.Consume();
                 _reporter.Report();
+
                 await Task.Delay(rng.Next(maxDelay));
             }
         } 
