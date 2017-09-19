@@ -12,6 +12,7 @@ namespace Palindrome
 
             testData.Add("rotor", true);
             testData.Add("motor", false);
+            testData.Add("å", true);
             testData.Add("regninger", true);
             testData.Add("Regninger", true);
             testData.Add("", true);

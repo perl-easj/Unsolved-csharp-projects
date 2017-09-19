@@ -32,7 +32,7 @@
         long LookupRandom(int numberOfLookups);
 
         /// <summary>
-        /// Perform randomised lookup of values
+        /// Perform randomised deletion of values
         /// </summary>
         long DeleteRandom(int numberOfDeletes);
 

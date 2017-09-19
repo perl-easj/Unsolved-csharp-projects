@@ -11,7 +11,7 @@
         private string _name;
 
         private string _alcoholicPart;
-        private string _nonAlcoholicCPart;
+        private string _nonAlcoholicPart;
 
         private int _alcoholicPartAmount;
         private int _nonAlcoholicPartAmount;
@@ -25,7 +25,7 @@
             _alcoholicPart = alcoholicPart;
             _alcoholicPartAmount = alcoholicPartAmount;
 
-            _nonAlcoholicCPart = nonAlcoholicCPart;
+            _nonAlcoholicPart = nonAlcoholicCPart;
             _nonAlcoholicPartAmount = nonAlcoholicPartAmount;
         }
         #endregion
@@ -41,9 +41,9 @@
             get { return _alcoholicPart; }
         }
 
-        public string NonAlcoholicCPart
+        public string NonAlcoholicPart
         {
-            get { return _nonAlcoholicCPart; }
+            get { return _nonAlcoholicPart; }
         }
 
         public int AlcoholicPartAmount
