@@ -1,4 +1,7 @@
-﻿namespace RolePlayV21
+﻿using System;
+// ReSharper disable ConvertIfStatementToConditionalTernaryExpression
+
+namespace RolePlayV21
 {
     public class InsertCodeHere
     {
@@ -6,13 +9,13 @@
         {
             // The FIRST line of code should be BELOW this line
 
-            NumberGenerator theNumberGenerator = new NumberGenerator();
-            BattleLog theLog = new BattleLog();
+            NumberGenerator generator = new NumberGenerator();
+            BattleLog log = new BattleLog();
 
-            // Original battle logic (1-on-1)
+            // Battle logic (1-on-1)
             #region 1-on-1 battle logic
-            Hero theHero = new Hero(theNumberGenerator, theLog, 100, 10, 30);
-            Beast theBeast = new Beast(theNumberGenerator, theLog, 90, 10, 25);
+            Hero theHero = new Hero(generator, log, "Olafur", 100, 10, 30);
+            Beast theBeast = new Beast(generator, log, "Zakhial", 90, 10, 25);
 
             while (!theHero.Dead && !theBeast.Dead)
             {
@@ -26,37 +29,24 @@
                 }
             }
 
-            theLog.PrintLog();
+            log.PrintLog();
+            Console.WriteLine();
+            if (theBeast.Dead)
+            {
+                Console.WriteLine($"The Hero {theHero.Name} was Victorious!!");
+            }
+            else
+            {
+                Console.WriteLine($"The Beast {theBeast.Name} won... ;-(");
+            }
             #endregion
 
 
             // New battle logic (1-on-many)
             #region 1-on-many battle logic
-            theHero.Reset();
-            theLog.Reset();
 
-            BeastArmy theArmy = new BeastArmy();
-            Beast theBeast1 = new Beast(theNumberGenerator, theLog, 40, 10, 25);
-            Beast theBeast2 = new Beast(theNumberGenerator, theLog, 20, 5, 15);
-            Beast theBeast3 = new Beast(theNumberGenerator, theLog, 30, 8, 12);
+            // TODO - implement 1-on-many battle logic
 
-            theArmy.AddBeast(theBeast1);
-            theArmy.AddBeast(theBeast2);
-            theArmy.AddBeast(theBeast3);
-
-            while (!theHero.Dead && !theArmy.Dead)
-            {
-                int damageByHero = theHero.DealDamage();
-                theArmy.ReceiveDamage(damageByHero);
-
-                if (!theArmy.Dead)
-                {
-                    int damageByArmy = theArmy.DealDamage();
-                    theHero.ReceiveDamage(damageByArmy);
-                }
-            }
-
-            theLog.PrintLog(); 
             #endregion
 
             // The LAST line of code should be ABOVE this line
