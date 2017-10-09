@@ -24,18 +24,25 @@
         #endregion
 
         #region Properties
-        public string ISBN { get { return _isbn; } }
-        public string Title { get { return _title; } }
-        public string Author { get { return _author; } }
-        public int NoOFPages { get { return _noOfPages; } }
-
-        public string AllInformation
+        public string ISBN
         {
-            get
-            {
-                return $"ISBN: {_isbn} , \"{_title}\", by {_author} ({_noOfPages}) pages";
-            }
-        } 
+            get { return _isbn; }
+        }
+
+        public string Title
+        {
+            get { return _title; }
+        }
+
+        public string Author
+        {
+            get { return _author; }
+        }
+
+        public int NoOfPages
+        {
+            get { return _noOfPages; }
+        }
         #endregion
     }
 }

@@ -45,19 +45,17 @@ namespace SchoolAdministrationV10
             {
                 if (_testScores.Count == 0)
                 {
-                    return 0;
+                    return -1;
                 }
-                else
+
+                int sum = 0;
+
+                foreach (int score in _testScores.Values)
                 {
-                    int sum = 0;
-
-                    foreach (var kvp in _testScores)
-                    {
-                        sum = sum + kvp.Value;
-                    }
-
-                    return (sum / _testScores.Count);
+                    sum = sum + score;
                 }
+
+                return (sum / _testScores.Count);
             }
         }
         #endregion

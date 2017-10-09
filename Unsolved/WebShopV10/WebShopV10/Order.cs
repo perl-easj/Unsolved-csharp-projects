@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace WebShopV10
 {
@@ -51,7 +50,7 @@ namespace WebShopV10
             }
 
             // first three items cost 9 kr. per item for shipping, rest cost 5 kr. per item
-            for (int index = 0; index < itemPriceListCopy.Count; index++) // Should this be a method? Any takers?
+            for (int index = 0; index < itemPriceListCopy.Count; index++) // Should this be a method? Anyone...??
             {
                 if (index < 3)
                 {
@@ -74,7 +73,6 @@ namespace WebShopV10
             for (int index = 0; index < itemPriceListCopy.Count; index++)
             {
                 totalCost = totalCost + itemPriceListCopy[index];
-                Console.WriteLine(itemPriceListCopy[index]); // TODO - did we need this printout??
             }
 
             return totalCost;

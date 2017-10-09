@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace SchoolAdministrationV10
 {
@@ -26,8 +25,7 @@ namespace SchoolAdministrationV10
         /// </summary>
         public int Count
         {
-            // The below must be changed
-            get { return 0; }
+            get { return _students.Count; }
         }
         #endregion
 
@@ -37,7 +35,7 @@ namespace SchoolAdministrationV10
         /// </summary>
         public void AddStudent(Student aStudent)
         {
-            // Add code here
+            // TODO
         }
 
         /// <summary>
@@ -46,7 +44,7 @@ namespace SchoolAdministrationV10
         /// </summary>
         public Student GetStudent(int id)
         {
-            // The below must be changed
+            // TODO
             return null;
         }
 
@@ -56,17 +54,19 @@ namespace SchoolAdministrationV10
         /// </summary>
         public int GetAverageForStudent(int id)
         {
-            // The below must be changed
+            // TODO
             return -1;
         }
 
         /// <summary>
         /// Returns the total test score average for ALL students in the catalog.
+        /// Note that only students with a "real" score average (i.e. NOT -1) should
+        /// be included in the calculation of the average.
         /// </summary>
         public int GetTotalAverage()
         {
-            // The below must be changed
-            return -1;
+            // TODO
+            return 0;
         } 
         #endregion
     }
