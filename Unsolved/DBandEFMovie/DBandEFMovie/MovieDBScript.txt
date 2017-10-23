@@ -10,7 +10,7 @@ DROP TABLE [dbo].[Movie];
 
 GO
 CREATE TABLE [dbo].[Movie] (
-    [Id]                INT        NOT NULL,
+    [Id]                INT        NOT NULL PRIMARY KEY,
     [Title]             NCHAR (50) NOT NULL,
     [Year]              INT        NOT NULL,
     [RunningTimeInMins] INT        NOT NULL,
@@ -22,7 +22,7 @@ DROP TABLE [dbo].[Studio];
 
 GO
 CREATE TABLE [dbo].[Studio] (
-    [Id]            INT        NOT NULL,
+    [Id]            INT        NOT NULL PRIMARY KEY,
     [Name]          NCHAR (50) NOT NULL,
     [HQCity]        NCHAR (30) NOT NULL,
     [NoOfEmployees] INT        NOT NULL
