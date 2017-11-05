@@ -22,20 +22,21 @@
     <StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Style="{StaticResource TextBlockStyle}"
-                       Text="(Name)"/>
+                       Text="{Binding ElementName=studentName, Path=Text}"/>
             <TextBlock Style="{StaticResource TextBlockStyle}"
                        Text=" scored "/>
             <TextBlock Style="{StaticResource TextBlockStyle}"
-                       Text="(score)"/>
+                       Text="{Binding ElementName=score, Path=Value}"/>
             <TextBlock Style="{StaticResource TextBlockStyle}"
                        Text=" in the "/>
             <TextBlock Style="{StaticResource TextBlockStyle}"
-                       Text="(subject)"/>
+                       Text="{Binding ElementName=subject, Path=Text}"/>
             <TextBlock Style="{StaticResource TextBlockStyle}" 
                        Text=" test"/>
         </StackPanel>
 
-        <Line X1="0" Y1="10" X2="400" Y2="10" Stroke="Black" StrokeThickness="2" />
+        <Line X1="0" Y1="10" X2="400" Y2="10" Stroke="Black" 
+              StrokeThickness="2" />
 
         <Grid>
             <Grid.RowDefinitions>
@@ -48,19 +49,25 @@
                 <ColumnDefinition Width="210"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource TextBlockStyle}" 
+            <TextBlock Grid.Row="0" Grid.Column="0" 
+                       Style="{StaticResource TextBlockStyle}" 
                        Text="Name"/>
-            <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource TextBoxStyle}"
+            <TextBox Grid.Row="0" Grid.Column="1" 
+                     Style="{StaticResource TextBoxStyle}"
                      x:Name="studentName"/>
 
-            <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource TextBlockStyle}" 
+            <TextBlock Grid.Row="1" Grid.Column="0" 
+                       Style="{StaticResource TextBlockStyle}" 
                        Text="Subject"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource TextBoxStyle}"
+            <TextBox Grid.Row="1" Grid.Column="1" 
+                     Style="{StaticResource TextBoxStyle}"
                      x:Name="subject"/>
 
-            <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource TextBlockStyle}" 
+            <TextBlock Grid.Row="2" Grid.Column="0" 
+                       Style="{StaticResource TextBlockStyle}" 
                        Text="Score"/>
-            <Slider Grid.Row="2" Grid.Column="1" Maximum="100" Minimum="0" Value="50" Width="200"
+            <Slider Grid.Row="2" Grid.Column="1" 
+                    Maximum="100" Minimum="0" Value="50" Width="200"
                     x:Name="score"/>
         </Grid>
     </StackPanel>

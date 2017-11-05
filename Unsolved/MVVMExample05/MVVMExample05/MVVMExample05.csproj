@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{EA001189-9355-41E9-8256-DEAB064C33AC}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MVVMExample05</RootNamespace>
+    <AssemblyName>MVVMExample05</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.15063.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <PackageCertificateKeyFile>MVVMExample05_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\App\AppConfig.cs" />
+    <Compile Include="DataTransformation\Domain\Movie\MovieViewModel.cs" />
+    <Compile Include="DataTransformation\Domain\Movie\MovieViewModelFactory.cs" />
+    <Compile Include="DataTransformation\Domain\Studio\StudioViewModel.cs" />
+    <Compile Include="DataTransformation\Domain\Studio\StudioViewModelFactory.cs" />
+    <Compile Include="Models\App\ObjectProvider.cs" />
+    <Compile Include="Models\Domain\Movie\Movie.cs" />
+    <Compile Include="Models\Domain\Movie\MovieCatalog.cs" />
+    <Compile Include="Models\Domain\Studio\Studio.cs" />
+    <Compile Include="Models\Domain\Studio\StudioCatalog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\App\AppViewModel.cs" />
+    <Compile Include="ViewModels\Domain\Movie\DetailsViewModel.cs" />
+    <Compile Include="ViewModels\Domain\Movie\ItemViewModel.cs" />
+    <Compile Include="ViewModels\Domain\Movie\MasterDetailsViewModel.cs" />
+    <Compile Include="ViewModels\Domain\Movie\ViewModelFactory.cs" />
+    <Compile Include="ViewModels\Domain\Studio\DetailsViewModel.cs" />
+    <Compile Include="ViewModels\Domain\Studio\ItemViewModel.cs" />
+    <Compile Include="ViewModels\Domain\Studio\MasterDetailsViewModel.cs" />
+    <Compile Include="ViewModels\Domain\Studio\ViewModelFactory.cs" />
+    <Compile Include="Views\App\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\App\OpeningView.xaml.cs">
+      <DependentUpon>OpeningView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Domain\Movie\View.xaml.cs">
+      <DependentUpon>View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Domain\Studio\View.xaml.cs">
+      <DependentUpon>View.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="MVVMExample05_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\App\Cloud.png" />
+    <Content Include="Assets\App\CloudLoad.png" />
+    <Content Include="Assets\App\CloudSave.png" />
+    <Content Include="Assets\App\Image.png" />
+    <Content Include="Assets\App\Load.png" />
+    <Content Include="Assets\App\Login.png" />
+    <Content Include="Assets\App\Logo120x60.jpg" />
+    <Content Include="Assets\App\Logo600x600.jpg" />
+    <Content Include="Assets\App\NotSet.jpg" />
+    <Content Include="Assets\App\Quit.png" />
+    <Content Include="Assets\App\Save.png" />
+    <Content Include="Assets\BadgeLogo.scale-100.png" />
+    <Content Include="Assets\BadgeLogo.scale-125.png" />
+    <Content Include="Assets\BadgeLogo.scale-150.png" />
+    <Content Include="Assets\BadgeLogo.scale-200.png" />
+    <Content Include="Assets\BadgeLogo.scale-400.jpg" />
+    <Content Include="Assets\BadgeLogo.scale-400.png" />
+    <Content Include="Assets\Domain\Movie\Movie.png" />
+    <Content Include="Assets\Domain\Studio\Studio.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-200.jpg" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.jpg" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square310x310Logo.scale-100.png" />
+    <Content Include="Assets\Square310x310Logo.scale-125.png" />
+    <Content Include="Assets\Square310x310Logo.scale-150.png" />
+    <Content Include="Assets\Square310x310Logo.scale-200.jpg" />
+    <Content Include="Assets\Square310x310Logo.scale-200.png" />
+    <Content Include="Assets\Square310x310Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Square44x44Logo.scale-400.jpg" />
+    <Content Include="Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\Square71x71Logo.scale-100.png" />
+    <Content Include="Assets\Square71x71Logo.scale-125.png" />
+    <Content Include="Assets\Square71x71Logo.scale-150.png" />
+    <Content Include="Assets\Square71x71Logo.scale-200.png" />
+    <Content Include="Assets\Square71x71Logo.scale-400.jpg" />
+    <Content Include="Assets\Square71x71Logo.scale-400.png" />
+    <Content Include="Assets\StoreLogo.scale-400.jpg" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.jpg" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Views\App\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\App\OpeningView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Domain\Movie\View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Domain\Studio\View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.0.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="CatalogImplementation">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\CatalogImplementation\bin\Debug\CatalogImplementation.dll</HintPath>
+    </Reference>
+    <Reference Include="CatalogInterfaces">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\CatalogInterfaces\bin\Debug\CatalogInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="CommandImplementation">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\CommandImplementation\bin\Debug\CommandImplementation.dll</HintPath>
+    </Reference>
+    <Reference Include="CommandInterfaces">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\CommandInterfaces\bin\Debug\CommandInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ControllerInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\MVVMStarterLibrary\ControllerInterfaces\bin\Debug\ControllerInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlState">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\ControlState\bin\Debug\ControlState.dll</HintPath>
+    </Reference>
+    <Reference Include="DataCommandImplementation">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\DataCommandImplementation\bin\Debug\DataCommandImplementation.dll</HintPath>
+    </Reference>
+    <Reference Include="DataControllerImplementation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\MVVMStarterLibrary\DataControllerImplementation\bin\Debug\DataControllerImplementation.dll</HintPath>
+    </Reference>
+    <Reference Include="DataTransformationImplementation">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\DataTransformationImplementation\bin\Debug\DataTransformationImplementation.dll</HintPath>
+    </Reference>
+    <Reference Include="DataTransformationInterfaces">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\DataTransformationInterfaces\bin\Debug\DataTransformationInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtensionsCommands">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\ExtensionsCommands\bin\Debug\ExtensionsCommands.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtensionsModel">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\ExtensionsModel\bin\Debug\ExtensionsModel.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtensionsServices">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\ExtensionsServices\bin\Debug\ExtensionsServices.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtensionsViewModel">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\ExtensionsViewModel\bin\Debug\ExtensionsViewModel.dll</HintPath>
+    </Reference>
+    <Reference Include="FilePersistency">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\FilePersistency\bin\Debug\FilePersistency.dll</HintPath>
+    </Reference>
+    <Reference Include="Images">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\Images\bin\Debug\Images.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryStorageImplementation">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\InMemoryStorageImplementation\bin\Debug\InMemoryStorageImplementation.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryStorageInterfaces">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\InMemoryStorage\bin\Debug\InMemoryStorageInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="PersistencyImplementation">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\PersistencyImplementation\bin\Debug\PersistencyImplementation.dll</HintPath>
+    </Reference>
+    <Reference Include="PersistencyInterfaces">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\PersistencyInterfaces\bin\Debug\PersistencyInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="StringPersistencyInterfaces">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\StringPersistencyInterfaces\bin\Debug\StringPersistencyInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="UI">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\UI\bin\Debug\UI.dll</HintPath>
+    </Reference>
+    <Reference Include="ViewModelImplementation">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\ViewModelImplementation\bin\Debug\ViewModelImplementation.dll</HintPath>
+    </Reference>
+    <Reference Include="ViewModelInterfaces">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\ViewModelInterfaces\bin\Debug\ViewModelInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ViewState">
+      <HintPath>..\..\..\..\MVVMStarterLibrary\ViewState\bin\Debug\ViewState.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

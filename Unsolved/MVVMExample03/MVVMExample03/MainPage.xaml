@@ -1,0 +1,80 @@
+﻿<Page
+    x:Class="MVVMExample03.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:MVVMExample03.ViewModel"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <viewModel:MasterDetailsViewModel/>
+    </Page.DataContext>
+
+    <Page.Resources>
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Margin" Value="5,5,5,5"/>
+        </Style>
+        <Style x:Key="TextBoxStyle" TargetType="TextBox">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Width" Value="315"/>
+            <Setter Property="Margin" Value="5,5,5,5"/>
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="20,20,20,20"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+        </Style>
+    </Page.Resources>
+
+    <!-- Outermost Grid has two columns and one row -->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- ListView (Master) -->
+        <ListView 
+            ItemsSource="{Binding ItemCollection}"
+            SelectedItem="{Binding ItemSelected, Mode=TwoWay}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Description}" FontSize="24" HorizontalAlignment="Center"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- (Details) -->
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+
+            <!-- Properties (Details) -->
+            <StackPanel Grid.Row="0" Grid.Column="0" Background="AntiqueWhite">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Title" Style="{StaticResource TextBlockStyle}"/>
+                    <TextBox Text="{Binding ItemDetails.Title}" Style="{StaticResource TextBoxStyle}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Year" Style="{StaticResource TextBlockStyle}"/>
+                    <TextBox Text="{Binding ItemDetails.Year}" Style="{StaticResource TextBoxStyle}"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+                <Button Content="Delete" Style="{StaticResource ButtonStyle}"
+                        Command="{Binding DeleteCommand}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
