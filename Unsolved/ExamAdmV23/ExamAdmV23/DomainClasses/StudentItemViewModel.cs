@@ -6,11 +6,14 @@ namespace ExamAdmV23.DomainClasses
     {
         private Student _domainObject;
 
+        #region Constructor
         public StudentItemViewModel(Student obj)
         {
             _domainObject = obj;
         }
+        #endregion
 
+        #region Properties for Data Binding
         public string Name
         {
             get { return _domainObject.Name; }
@@ -29,6 +32,7 @@ namespace ExamAdmV23.DomainClasses
         public string BirthStr
         {
             get { return "(Born " + _domainObject.YearOfBirth + ")"; }
-        }
+        } 
+        #endregion
     }
 }

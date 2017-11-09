@@ -9,12 +9,6 @@
         where TDomainClass : class
     {
         /// <summary>
-        /// The domain object enclosed by the
-        /// item view model object
-        /// </summary>
-        public TDomainClass DomainObject;
-
-        /// <summary>
         /// A derived class must call this constructor
         /// </summary>
         /// <param name="obj">Enclosed domain object</param>
@@ -22,5 +16,11 @@
         {
             DomainObject = obj;
         }
+
+        /// <summary>
+        /// The domain object enclosed by the
+        /// item view model object
+        /// </summary>
+        public TDomainClass DomainObject;
     }
 }

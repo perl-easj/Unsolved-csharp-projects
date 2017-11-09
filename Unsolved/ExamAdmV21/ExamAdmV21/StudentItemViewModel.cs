@@ -7,11 +7,14 @@ namespace ExamAdmV21
     {
         private Student _domainObject;
 
+        #region Constructor
         public StudentItemViewModel(Student s)
         {
             _domainObject = s;
         }
+        #endregion
 
+        #region Properties for Data Binding
         public string Name
         {
             get { return _domainObject.Name; }
@@ -30,13 +33,16 @@ namespace ExamAdmV21
         public string BirthStr
         {
             get { return "(Born " + _domainObject.YearOfBirth + ")"; }
-        }
+        } 
+        #endregion
 
+        #region Code for OnPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        } 
+        #endregion
     }
 }

@@ -1,28 +1,33 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Windows.Input;
 
 namespace ExamAdmV22
 {
     public class StudentMasterDetailsViewModel : INotifyPropertyChanged
     {
-        private StudentCollection _studentCollection;
+        #region Instance fields
+        private StudentCatalog _studentCatalog;
         private StudentItemViewModel _studentItemViewModelSelected;
         private StudentMasterViewModel _studentMasterViewModel;
-        private RelayCommand _deleteCommand;
+        private DeleteCommand _deleteCommand;
+        #endregion
 
+        #region Constructor
         public StudentMasterDetailsViewModel()
         {
-            _studentCollection = new StudentCollection();
+            _studentCatalog = new StudentCatalog();
             _studentMasterViewModel = new StudentMasterViewModel();
-            _deleteCommand = null; // This needs to be changed
             _studentItemViewModelSelected = null;
-        }
 
+            _deleteCommand = null; // TODO - This needs to be changed
+        }
+        #endregion
+
+        #region Properties for Data Binding
         public List<StudentItemViewModel> StudentItemViewModelCollection
         {
-            get { return _studentMasterViewModel.GetStudentItemViewModelCollection(_studentCollection); }
+            get { return _studentMasterViewModel.GetStudentItemViewModelCollection(_studentCatalog); }
         }
 
         public StudentItemViewModel StudentItemViewModelSelected
@@ -34,18 +39,21 @@ namespace ExamAdmV22
                 OnPropertyChanged();
             }
         }
+        #endregion
 
+        #region Methods
         public void Delete(string name)
         {
             // Delete from model collection
-            _studentCollection.Delete(name);
+            _studentCatalog.Delete(name);
 
             // Set selection to null
             StudentItemViewModelSelected = null;
 
             // Refresh the item list
             OnPropertyChanged(nameof(StudentItemViewModelCollection));
-        }
+        } 
+        #endregion
 
         #region OnPropertyChanged code
         public event PropertyChangedEventHandler PropertyChanged;

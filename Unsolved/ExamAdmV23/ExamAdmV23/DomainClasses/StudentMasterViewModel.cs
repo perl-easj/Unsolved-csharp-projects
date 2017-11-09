@@ -5,7 +5,7 @@ namespace ExamAdmV23.DomainClasses
 {
     public class StudentMasterViewModel
     {
-        public List<StudentItemViewModel> GetStudentItemViewModelCollection(StudentModel model)
+        public List<StudentItemViewModel> GetStudentItemViewModelCollection(StudentCatalog model)
         {
             List<StudentItemViewModel> items = new List<StudentItemViewModel>();
 

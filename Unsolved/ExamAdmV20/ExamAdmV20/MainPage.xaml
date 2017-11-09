@@ -56,17 +56,17 @@
             <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource TextBlockStyle}" 
                        Text="Name"/>
             <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource TextBoxStyle}"
-                     x:Name="studentName" Text="{Binding Name, Mode=TwoWay}"/>
+                     Text="{Binding Name, Mode=TwoWay}"/>
 
             <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource TextBlockStyle}" 
                        Text="Subject"/>
             <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource TextBoxStyle}"
-                     x:Name="subject" Text="{Binding Subject, Mode=TwoWay}"/>
+                     Text="{Binding Subject, Mode=TwoWay}"/>
 
             <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource TextBlockStyle}" 
                        Text="Score"/>
             <Slider Grid.Row="2" Grid.Column="1" Maximum="100" Minimum="0" Width="200"
-                    x:Name="score" Value="{Binding Score, Mode=TwoWay}" />
+                    Value="{Binding Score, Mode=TwoWay}" />
         </Grid>
         
     </StackPanel>

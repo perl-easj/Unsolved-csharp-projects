@@ -4,11 +4,11 @@ namespace ExamAdmV22
 {
     public class StudentMasterViewModel
     {
-        public List<StudentItemViewModel> GetStudentItemViewModelCollection(StudentCollection collection)
+        public List<StudentItemViewModel> GetStudentItemViewModelCollection(StudentCatalog catalog)
         {
             List<StudentItemViewModel> items = new List<StudentItemViewModel>();
 
-            foreach (Student s in collection.Students)
+            foreach (Student s in catalog.Students)
             {
                 items.Add(new StudentItemViewModel(s));
             }

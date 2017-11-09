@@ -12,7 +12,7 @@ namespace ExamAdmV23.BaseClasses
         where TDomainClass : DomainClassBase<TKey>
     {
         public List<ItemViewModelBase<TDomainClass>> GetItemViewModelCollection(
-            ModelBase<TDomainClass, TKey> collection,
+            CatalogBase<TDomainClass, TKey> collection,
             ViewModelFactoryBase<TDomainClass, TKey> factory)
         {
             List<ItemViewModelBase<TDomainClass>> items = new List<ItemViewModelBase<TDomainClass>>();
