@@ -4,9 +4,8 @@
     /// A domain class must inherit from this class,
     /// and implement the Key property
     /// </summary>
-    /// <typeparam name="TKey">Type of key for a domain object</typeparam>
-    public abstract class DomainClassBase<TKey>
+    public abstract class DomainClassBase
     {
-        public abstract TKey Key { get; }
+        public abstract int Key { get; set; }
     }
 }

@@ -1,5 +1,4 @@
-﻿using ExamAdmV23.BaseClasses;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
@@ -10,8 +9,8 @@ namespace ExamAdmV23.DomainClasses
     {
         #region Instance fields
         private StudentCatalog _studentCatalog;
+        private StudentViewModelFactory _factory;
         private StudentItemViewModel _studentItemViewModelSelected;
-        private StudentMasterViewModel _studentMasterViewModel;
         private DeleteCommand _deleteCommand;
         #endregion
 
@@ -19,9 +18,9 @@ namespace ExamAdmV23.DomainClasses
         public StudentMasterDetailsViewModel()
         {
             _studentCatalog = new StudentCatalog();
-            _studentMasterViewModel = new StudentMasterViewModel();
-            _deleteCommand = new DeleteCommand(this);
+            _factory = new StudentViewModelFactory();
             _studentItemViewModelSelected = null;
+            _deleteCommand = new DeleteCommand(_studentCatalog, this);
         }
         #endregion
 
@@ -33,7 +32,7 @@ namespace ExamAdmV23.DomainClasses
 
         public List<StudentItemViewModel> StudentItemViewModelCollection
         {
-            get { return _studentMasterViewModel.GetStudentItemViewModelCollection(_studentCatalog); }
+            get { return _factory.GetStudentItemViewModelCollection(_studentCatalog); }
         }
 
         public StudentItemViewModel StudentItemViewModelSelected
@@ -49,17 +48,10 @@ namespace ExamAdmV23.DomainClasses
         #endregion
 
         #region Methods
-        public void Delete(string name)
+        public void RefreshStudentItemViewModelCollection()
         {
-            // Delete from catalog
-            _studentCatalog.Delete(name);
-
-            // Set selection to null
-            StudentItemViewModelSelected = null;
-
-            // Refresh the item list
             OnPropertyChanged(nameof(StudentItemViewModelCollection));
-        } 
+        }
         #endregion
 
         #region OnPropertyChanged code

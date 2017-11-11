@@ -3,14 +3,16 @@ using System.Windows.Input;
 
 namespace ExamAdmV23.BaseClasses
 {
-    public class DeleteCommandBase<TDomainClass, TViewModel, TKey> : ICommand
-        where TViewModel : MasterDetailsViewModelBase<TDomainClass, TKey> 
-        where TDomainClass : DomainClassBase<TKey>
+    public class DeleteCommandBase<TDomainClass, TViewModel> : ICommand
+        where TViewModel : MasterDetailsViewModelBase<TDomainClass>
+        where TDomainClass : DomainClassBase
     {
+        private CatalogBase<TDomainClass> _catalog;
         private TViewModel _viewModel;
 
-        public DeleteCommandBase(TViewModel viewModel)
+        public DeleteCommandBase(CatalogBase<TDomainClass> catalog, TViewModel viewModel)
         {
+            _catalog = catalog;
             _viewModel = viewModel;
         }
 
@@ -21,7 +23,14 @@ namespace ExamAdmV23.BaseClasses
 
         public void Execute(object parameter)
         {
-            _viewModel.Delete(_viewModel.ItemViewModelSelected.DomainObject.Key);
+            // Delete from catalog
+            _catalog.Delete(_viewModel.ItemViewModelSelected.DomainObject.Key);
+
+            // Set selection to null
+            _viewModel.ItemViewModelSelected = null;
+
+            // Refresh the item list
+            _viewModel.RefreshItemViewModelCollection();
         }
 
         public void RaiseCanExecuteChanged()

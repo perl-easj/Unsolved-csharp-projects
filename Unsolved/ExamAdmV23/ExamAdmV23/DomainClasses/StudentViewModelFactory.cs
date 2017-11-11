@@ -1,17 +1,24 @@
-﻿using ExamAdmV23.BaseClasses;
+﻿using System.Collections.Generic;
 
 namespace ExamAdmV23.DomainClasses
 {
-    //public class StudentViewModelFactory : ViewModelFactoryBase<Student, string>
-    //{
-    //    public override ItemViewModelBase<Student> CreateItemViewModel(Student obj)
-    //    {
-    //        return new StudentItemViewModel(obj);
-    //    }
+    public class StudentViewModelFactory
+    {
+        public StudentItemViewModel CreateItemViewModel(Student obj)
+        {
+            return new StudentItemViewModel(obj);
+        }
 
-    //    public override MasterViewModelBase<Student, string> CreateMasterViewModel()
-    //    {
-    //        return new StudentMasterViewModel();
-    //    }
-    //}
+        public List<StudentItemViewModel> GetStudentItemViewModelCollection(StudentCatalog catalog)
+        {
+            List<StudentItemViewModel> items = new List<StudentItemViewModel>();
+
+            foreach (Student s in catalog.Students)
+            {
+                items.Add(new StudentItemViewModel(s));
+            }
+
+            return items;
+        }
+    }
 }

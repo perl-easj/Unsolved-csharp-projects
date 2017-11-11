@@ -1,10 +1,9 @@
-﻿using ExamAdmV23.BaseClasses;
-
-namespace ExamAdmV23.DomainClasses
+﻿namespace ExamAdmV23.DomainClasses
 {
     public class Student
     {
         #region Instance fields
+        private int _key;
         private string _name;
         private int _yearOfBirth;
         private string _country;
@@ -14,6 +13,7 @@ namespace ExamAdmV23.DomainClasses
         #region Constructor
         public Student(string name, int yearOfBirth, string country, string imageSource)
         {
+            _key = -1;
             _name = name;
             _yearOfBirth = yearOfBirth;
             _country = country;
@@ -22,10 +22,15 @@ namespace ExamAdmV23.DomainClasses
         #endregion
 
         #region Properties
+        public int Key
+        {
+            get { return _key; }
+            set { _key = value; }
+        }
+
         public string Name
         {
             get { return _name; }
-            set { _name = value; }
         }
 
         public int YearOfBirth
@@ -44,7 +49,7 @@ namespace ExamAdmV23.DomainClasses
         {
             get { return _imageSource; }
             set { _imageSource = value; }
-        } 
+        }
         #endregion
     }
 }

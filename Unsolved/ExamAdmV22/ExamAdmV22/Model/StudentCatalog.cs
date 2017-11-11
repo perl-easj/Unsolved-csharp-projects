@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace ExamAdmV23.DomainClasses
+namespace ExamAdmV22.Model
 {
     public class StudentCatalog
     {
@@ -38,7 +38,7 @@ namespace ExamAdmV23.DomainClasses
         public void Delete(int key)
         {
             _students.Remove(key);
-        }
+        } 
         #endregion
     }
 }

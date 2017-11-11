@@ -1,6 +1,4 @@
-﻿using ExamAdmV23.BaseClasses;
-
-namespace ExamAdmV23.DomainClasses
+﻿namespace ExamAdmV23.DomainClasses
 {
     public class StudentItemViewModel
     {
@@ -14,6 +12,11 @@ namespace ExamAdmV23.DomainClasses
         #endregion
 
         #region Properties for Data Binding
+        public Student DomainObject
+        {
+            get { return _domainObject; }
+        }
+
         public string Name
         {
             get { return _domainObject.Name; }

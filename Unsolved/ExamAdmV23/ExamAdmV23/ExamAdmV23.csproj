@@ -104,13 +104,11 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BaseClasses\MasterViewModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DomainClasses\Student.cs" />
     <Compile Include="DomainClasses\StudentCatalog.cs" />
     <Compile Include="DomainClasses\StudentItemViewModel.cs" />
     <Compile Include="DomainClasses\StudentMasterDetailsViewModel.cs" />
-    <Compile Include="DomainClasses\StudentMasterViewModel.cs" />
     <Compile Include="BaseClasses\MasterDetailsViewModelBase.cs" />
     <Compile Include="DomainClasses\StudentViewModelFactory.cs" />
   </ItemGroup>

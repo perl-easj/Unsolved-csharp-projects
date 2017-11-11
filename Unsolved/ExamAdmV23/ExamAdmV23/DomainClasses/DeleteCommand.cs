@@ -1,15 +1,16 @@
-﻿using ExamAdmV23.BaseClasses;
-using System;
+﻿using System;
 using System.Windows.Input;
 
 namespace ExamAdmV23.DomainClasses
 {
     public class DeleteCommand : ICommand
     {
+        private StudentCatalog _catalog;
         private StudentMasterDetailsViewModel _viewModel;
 
-        public DeleteCommand(StudentMasterDetailsViewModel viewModel)
+        public DeleteCommand(StudentCatalog catalog, StudentMasterDetailsViewModel viewModel)
         {
+            _catalog = catalog;
             _viewModel = viewModel;
         }
 
@@ -20,7 +21,14 @@ namespace ExamAdmV23.DomainClasses
 
         public void Execute(object parameter)
         {
-            _viewModel.Delete(_viewModel.StudentItemViewModelSelected.Name);
+            // Delete from catalog
+            _catalog.Delete(_viewModel.StudentItemViewModelSelected.DomainObject.Key);
+
+            // Set selection to null
+            _viewModel.StudentItemViewModelSelected = null;
+
+            // Refresh the item list
+            _viewModel.RefreshStudentItemViewModelCollection();
         }
 
         public void RaiseCanExecuteChanged()

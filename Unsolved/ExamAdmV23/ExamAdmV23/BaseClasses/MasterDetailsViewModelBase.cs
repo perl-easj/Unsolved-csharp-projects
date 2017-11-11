@@ -11,15 +11,14 @@ namespace ExamAdmV23.BaseClasses
     /// this class, and call its constructor with a domain-specific 
     /// catalog object and a domain-specific factory object.
     /// </summary>
-    public abstract class MasterDetailsViewModelBase<TDomainClass, TKey> : INotifyPropertyChanged
-        where TDomainClass : DomainClassBase<TKey>
+    public abstract class MasterDetailsViewModelBase<TDomainClass> : INotifyPropertyChanged
+        where TDomainClass : DomainClassBase
     {
         #region Instance fields
-        private ViewModelFactoryBase<TDomainClass, TKey> _factory;
-        private CatalogBase<TDomainClass, TKey> _catalog;
+        private CatalogBase<TDomainClass> _catalog;
+        private ViewModelFactoryBase<TDomainClass> _factory;
         private ItemViewModelBase<TDomainClass> _itemViewModelSelected;
-        private MasterViewModelBase<TDomainClass, TKey> _masterViewModel;
-        private DeleteCommandBase<TDomainClass, MasterDetailsViewModelBase<TDomainClass, TKey>, TKey> _deleteCommand;
+        private DeleteCommandBase<TDomainClass, MasterDetailsViewModelBase<TDomainClass>> _deleteCommand;
         #endregion
 
         #region Constructor
@@ -28,14 +27,13 @@ namespace ExamAdmV23.BaseClasses
         /// references to a catalog object and a factory object
         /// </summary>
         protected MasterDetailsViewModelBase(
-            ViewModelFactoryBase<TDomainClass, TKey> factory,
-            CatalogBase<TDomainClass, TKey> catalog)
+            CatalogBase<TDomainClass> catalog,
+            ViewModelFactoryBase<TDomainClass> factory)
         {
-            _factory = factory;
             _catalog = catalog;
+            _factory = factory;
             _itemViewModelSelected = null;
-            _masterViewModel = factory.CreateMasterViewModel();
-            _deleteCommand = new DeleteCommandBase<TDomainClass, MasterDetailsViewModelBase<TDomainClass, TKey>, TKey>(this);
+            _deleteCommand = new DeleteCommandBase<TDomainClass, MasterDetailsViewModelBase<TDomainClass>>(_catalog, this);
         }
         #endregion
 
@@ -55,7 +53,7 @@ namespace ExamAdmV23.BaseClasses
         /// </summary>
         public List<ItemViewModelBase<TDomainClass>> ItemViewModelCollection
         {
-            get { return _masterViewModel.GetItemViewModelCollection(_catalog, _factory); }
+            get { return _factory.GetItemViewModelCollection(_catalog); }
         }
 
         /// <summary>
@@ -75,22 +73,10 @@ namespace ExamAdmV23.BaseClasses
         #endregion
 
         #region Methods
-        /// <summary>
-        /// Performs the deletion of a domain object from the catalog,
-        /// and triggers a re-read of item view models
-        /// </summary>
-        /// <param name="key">Key for object to delete</param>
-        public void Delete(TKey key)
+        public void RefreshItemViewModelCollection()
         {
-            // Delete from model collection
-            _catalog.Delete(key);
-
-            // Set selection to null
-            ItemViewModelSelected = null;
-
-            // Refresh the item list
             OnPropertyChanged(nameof(ItemViewModelCollection));
-        } 
+        }
         #endregion
 
         #region OnPropertyChanged code
