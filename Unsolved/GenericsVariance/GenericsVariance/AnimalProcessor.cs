@@ -30,7 +30,7 @@ namespace GenericsVariance
             {
                 Bird b = new Bird("Tweety");
                 b.FlapWings();
-                animals.Set(b);
+                animals.Set(b); // Why does this work..?
 
                 Cat c = new Cat("Spot");
                 c.Purr();

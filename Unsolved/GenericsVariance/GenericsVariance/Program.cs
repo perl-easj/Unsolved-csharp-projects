@@ -8,13 +8,13 @@ namespace GenericsVariance
     {
         static void Main(string[] args)
         {
-            // No problem, since AnimalCollection implements 
+            // No problem, since Collection implements 
             // ICollectionGet and ICollectionSet
             Collection<Bird> birds = new Collection<Bird>();
             ICollectionGet<Bird> birdsGet = birds;
             ICollectionSet<Bird> birdsSet = birds;
 
-            // No problem, since AnimalCollection implements 
+            // No problem, since Collection implements 
             // ICollectionGet and ICollectionSet
             Collection<Animal> animals = new Collection<Animal>();
             ICollectionGet<Animal> animalsGet = animals;

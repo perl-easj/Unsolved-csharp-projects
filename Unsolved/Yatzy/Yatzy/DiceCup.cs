@@ -55,7 +55,7 @@ namespace Yatzy
 
         /// <summary>
         /// Returns the dice values as (value, count) pairs.
-        /// The dice values 2, 3, 6 ,6, 2, 6
+        /// The dice values 2, 3, 6, 6, 2, 6
         /// will be returned as
         /// ((1,0), (2,2), (3,1), (4,0), (5,0), (6,3))
         /// </summary>

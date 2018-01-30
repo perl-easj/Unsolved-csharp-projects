@@ -1,4 +1,6 @@
 ﻿using System;
+// ReSharper disable UnusedVariable
+#pragma warning disable 219
 
 namespace WebShopV06
 {
@@ -15,6 +17,8 @@ namespace WebShopV06
             int noOfBooksInOrder = 0;
             int noOfDVDsInOrder = 0;
             int noOfGamesInOrder = 0;
+
+            double totalNetPrice = netPriceBook * noOfBooksInOrder + netPriceDVD * noOfDVDsInOrder + netPriceGame * noOfGamesInOrder;
 
             // SO#1
             bool receiveSpecialOffer1 = false;

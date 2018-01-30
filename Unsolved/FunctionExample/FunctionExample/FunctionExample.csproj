@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{480F666A-D9A4-472D-BA59-249284E7B7D0}</ProjectGuid>
+    <ProjectGuid>{D5E9F642-9460-47CC-BC5A-5A0EB31830BC}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>LambdaAnimals</RootNamespace>
-    <AssemblyName>LambdaAnimals</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>FunctionExample</RootNamespace>
+    <AssemblyName>FunctionExample</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dog.cs" />
+    <Compile Include="InsertCodeHere.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
