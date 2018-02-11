@@ -4,10 +4,6 @@ namespace NumericalPi
 {
     public class PiCalc
     {
-        public PiCalc()
-        {
-        }
-
         /// <summary>
         /// Executes the calculation of an 
         /// approximate value of pi.
@@ -27,7 +23,7 @@ namespace NumericalPi
         /// <returns>Number of throws within the unit circle</returns>
         public int Iterate(int iterations)
         {
-            Random _generator = new Random();
+            Random _generator = new Random(Guid.NewGuid().GetHashCode());
             int insideUnitCircle = 0;
 
             for (int i = 0; i < iterations; i++)

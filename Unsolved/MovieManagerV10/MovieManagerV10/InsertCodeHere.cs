@@ -8,18 +8,22 @@ namespace MovieManagerV10
         {
             // The FIRST line of code should be BELOW this line
 
-            Movie firstMovie = new Movie("Alien", "Ridley Scott", 112);
-            Movie secondMovie = new Movie("Inception", "Christopher Nolan", 162);
+            Movie movieA = new Movie("Alien", "Ridley Scott", 112);
+            Movie movieB = new Movie("Inception", "Christopher Nolan", 162);
 
-            Console.WriteLine($"{firstMovie.Title}, by {firstMovie.Director}, watched it {firstMovie.NoOfViews} time(s)");
-            Console.WriteLine($"{secondMovie.Title}, by {secondMovie.Director}, watched it {secondMovie.NoOfViews} time(s)");
+            Console.WriteLine("Before calls of Watch():");
+            Console.WriteLine($"{movieA.Title}, by {movieA.Director}, watched it {movieA.NoOfViews} time(s)");
+            Console.WriteLine($"{movieB.Title}, by {movieB.Director}, watched it {movieB.NoOfViews} time(s)");
+            Console.WriteLine();
 
-            firstMovie.Watch();
-            firstMovie.Watch();
-            secondMovie.Watch();
+            movieA.Watch();
+            movieA.Watch();
+            movieB.Watch();
 
-            Console.WriteLine($"{firstMovie.Title}, by {firstMovie.Director}, watched it {firstMovie.NoOfViews} time(s)");
-            Console.WriteLine($"{secondMovie.Title}, by {secondMovie.Director}, watched it {secondMovie.NoOfViews} time(s)");
+            Console.WriteLine("After calls of Watch():");
+            Console.WriteLine($"{movieA.Title}, by {movieA.Director}, watched it {movieA.NoOfViews} time(s)");
+            Console.WriteLine($"{movieB.Title}, by {movieB.Director}, watched it {movieB.NoOfViews} time(s)");
+            Console.WriteLine();
 
             // The LAST line of code should be ABOVE this line
         }

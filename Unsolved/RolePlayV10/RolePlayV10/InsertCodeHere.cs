@@ -8,11 +8,11 @@ namespace RolePlayV10
         {
             // The FIRST line of code should be BELOW this line
 
-            Warrior firstWarrior = new Warrior("Ragnar");
-            Warrior secondWarrior = new Warrior("Lagertha");
+            Warrior warriorA = new Warrior("Ragnar");
+            Warrior warriorB = new Warrior("Lagertha");
 
-            Console.WriteLine(firstWarrior.Name);
-            Console.WriteLine(secondWarrior.Name);
+            Console.WriteLine($"Warrior A is called {warriorA.Name}");
+            Console.WriteLine($"Warrior B is called {warriorB.Name}");
 
             // The LAST line of code should be ABOVE this line
         }

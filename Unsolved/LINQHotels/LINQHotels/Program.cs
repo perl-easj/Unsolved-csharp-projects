@@ -176,7 +176,7 @@ namespace LINQHotels
 
         private static void PrintNumericQueryResult(string leadText, double queryResult)
         {
-            Console.WriteLine($"{leadText}: {queryResult:F}");
+            Console.WriteLine($"{leadText}: {queryResult:F0}");
             Console.WriteLine();
             Console.WriteLine();
         }

@@ -4,7 +4,7 @@
     /// A class representing a hotel room. A hotel room has
     /// 1) A number
     /// 2) A hotel ID
-    /// 3) A type ("D": Double, "F": Family, S:"Single"
+    /// 3) A type ("D": Double, "F": Family, S:"Single")
     /// 4) A price
     /// </summary>
     public class Room

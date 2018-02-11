@@ -49,9 +49,7 @@ namespace SlicesOfPi
                 {
                     Console.Write("Enter number of iterations to do : ");
                     string iterationsStr = Console.ReadLine();
-                    int iterationsInSlice = 0;
-
-                    if (Int32.TryParse(iterationsStr, out iterationsInSlice) && iterationsInSlice > 0)
+                    if (Int32.TryParse(iterationsStr, out var iterationsInSlice) && iterationsInSlice > 0)
                     {
                         double partialPi = calc.Calculate(iterationsInSlice);
                         Console.WriteLine($"Did {iterationsInSlice} additional iterations");
@@ -80,9 +78,9 @@ namespace SlicesOfPi
             PiCalcData data = new PiCalcData();
 
             // This is where the magic happens...
-            Task<double> task = calc.CalculateAsync(data);
+            Task task = calc.CalculateAsync(data);
             MainUILoopForAsync(data);
-            double finalPi = await task;
+            await task;
 
             // Report result
             Console.WriteLine($"Final value for pi : {data.Pi}");

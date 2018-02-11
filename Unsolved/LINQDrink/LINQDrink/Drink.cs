@@ -18,14 +18,16 @@
         #endregion
 
         #region Constructor
-        public Drink(string name, string alcoholicPart, int alcoholicPartAmount,
-            string nonAlcoholicCPart, int nonAlcoholicPartAmount)
+        public Drink(string name,
+            string alcoholicPart, int alcoholicPartAmount,
+            string nonAlcoholicPart, int nonAlcoholicPartAmount)
         {
             _name = name;
+
             _alcoholicPart = alcoholicPart;
             _alcoholicPartAmount = alcoholicPartAmount;
 
-            _nonAlcoholicPart = nonAlcoholicCPart;
+            _nonAlcoholicPart = nonAlcoholicPart;
             _nonAlcoholicPartAmount = nonAlcoholicPartAmount;
         }
         #endregion

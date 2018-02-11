@@ -21,8 +21,8 @@
 
 
         /// <summary>
-        /// This method should figure out whether or not the
-        /// given string is a palindrome.
+        /// This method determines whether or not the given 
+        /// string is a palindrome.
         /// REMEMBER that spaces are stripped away, and all
         /// characters are lowercase at this point
         /// </summary>

@@ -7,7 +7,10 @@ namespace BackPacking.Containers
 {
     /// <summary>
     /// This class serves as a base class for all classes containing 
-    /// BackPackItem objects.
+    /// BackPackItem objects. You can essentially:
+    /// 1) Retrieve all items in the container
+    /// 2) Add items to the container
+    /// 3) Remove items from the container
     /// </summary>
     public class BackPackItemContainer
     {

@@ -22,9 +22,19 @@ namespace Palindrome
             foreach (var testItem in testData)
             {
                 bool isPalindrome = checker.IsPalindrome(testItem.Key);
-                string result = isPalindrome == testItem.Value ? "OK" : "FAIL";
+                bool testOK = isPalindrome == testItem.Value;
+                string notText = isPalindrome ? "" : " not";
 
-                Console.WriteLine($"\"{testItem.Key}\" is a palindrome -> {isPalindrome}  ({result})");
+                if (testOK)
+                {
+                    Console.WriteLine($"\"{testItem.Key}\" is{notText} a palindrome (TEST OK)");
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"\"{testItem.Key}\" is{notText} a palindrome (TEST FAIL)");
+                    Console.ResetColor();
+                }
             }
 
 

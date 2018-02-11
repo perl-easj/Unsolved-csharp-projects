@@ -40,7 +40,7 @@
 
         public override string ToString()
         {
-            return Description + ": weight " + Weight + " kg, worth " + Value;
+            return $"{Description} : weight {Weight} kg., worth {Value}";
         }
     }
 }

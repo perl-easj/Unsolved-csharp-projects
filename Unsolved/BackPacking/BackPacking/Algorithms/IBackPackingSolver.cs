@@ -1,4 +1,6 @@
-﻿namespace BackPacking.Algorithms
+﻿using BackPacking.Containers;
+
+namespace BackPacking.Algorithms
 {
     /// <summary>
     /// Minimal interface for classes implementing a 
@@ -10,7 +12,7 @@
         /// Implement this method to implement a specific algorithm
         /// for backpacking.
         /// </summary>
-        void Solve(double capacityLeft);
+        void Solve(ItemVault theItemVault, BackPack theBackPack);
 
         /// <summary>
         /// This method should manage pre- and post-solving actions, 

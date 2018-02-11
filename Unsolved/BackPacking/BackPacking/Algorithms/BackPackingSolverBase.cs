@@ -8,13 +8,15 @@ namespace BackPacking.Algorithms
     /// <summary>
     /// Base class for classes implementing a specific algorithm for
     /// packing a backpack. The items provided in the constructor are
-    /// inserted into a "vault", from which they can later be removed 
-    /// and put into a backpack.
+    /// inserted into an item vault, which is then used when calling
+    /// the Solve method.
     /// </summary>
     public abstract class BackPackingSolverBase : IBackPackingSolver
     {
+        #region Instance fields
         protected ItemVault _theVault;
-        protected BackPack _theBackPack;
+        protected BackPack _theBackPack; 
+        #endregion
 
         #region Constructor
         protected BackPackingSolverBase(List<BackPackItem> items, double capacity)
@@ -29,34 +31,24 @@ namespace BackPacking.Algorithms
         } 
         #endregion
 
-        #region Properties
-        protected ItemVault TheVault
-        {
-            get { return _theVault; }
-        }
-
-        protected BackPack TheBackPack
-        {
-            get { return _theBackPack; }
-        } 
-        #endregion
-
+        #region Methods
         /// <summary>
         /// Solves the backpacking problem, and prints out information
         /// about the solution.
         /// </summary>
         public void Run()
         {
-            Solve(TheBackPack.WeightCapacityLeft);
-            TheBackPack.PrintContent();
+            Solve(_theVault, _theBackPack);
+            _theBackPack.PrintContent();
             Console.WriteLine();
-            TheVault.PrintContent();
+            _theVault.PrintContent();
         }
 
         /// <summary>
         /// Override this method to implement a specific algorithm
         /// for backpacking.
         /// </summary>
-        public abstract void Solve(double capacityLeft);
+        public abstract void Solve(ItemVault theItemVault, BackPack theBackPack); 
+        #endregion
     }
 }

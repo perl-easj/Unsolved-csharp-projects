@@ -9,15 +9,11 @@ namespace DataStructureCompare
     /// </summary>
     public class LinkedListTester : DataStructureTesterBase<LinkedList<int>>
     {
-        public LinkedListTester(LinkedList<int> collection) : base(collection)
-        {
-        }
-
         /// <summary>
         /// Adds an element using the AddLast method, 
         /// i.e. adds to end of list
         /// </summary>
-        public override void AddInitialStatement(int valueToInsert)
+        public override void InsertInitialStatement(int valueToInsert)
         {
             Collection.AddLast(valueToInsert);
         }
@@ -57,14 +53,6 @@ namespace DataStructureCompare
         {
             // Notice that RemoveAt is not available for LinkedList
             Collection.Remove(Collection.ElementAt(Generator.Next(Collection.Count)));
-        }
-
-        /// <summary>
-        /// Performs a value lookup using the Contains method
-        /// </summary>
-        public override void FindRandomStatement(int valueToFind)
-        {
-            bool found = Collection.Contains(valueToFind);
         }
     }
 }

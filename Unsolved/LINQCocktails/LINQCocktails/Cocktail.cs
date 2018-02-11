@@ -5,7 +5,8 @@ namespace LINQCocktails
     /// <summary>
     /// This class represents a cocktail, which is simply
     /// a name, and a list of ingredients.
-    /// For each ingredient, the name and amount (in cl.) is specified
+    /// For each ingredient, the name and amount (in cl.) 
+    /// is specified
     /// </summary>
     public class Cocktail
     {
@@ -35,9 +36,9 @@ namespace LINQCocktails
         #endregion
 
         #region Methods
-        public void AddIngredient(string anIngredient, int amount)
+        public void AddIngredient(string ingredientName, int amount)
         {
-            _ingredients.Add(anIngredient, amount);
+            _ingredients.Add(ingredientName, amount);
         } 
         #endregion
     }

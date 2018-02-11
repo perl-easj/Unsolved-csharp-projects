@@ -1,7 +1,4 @@
-﻿using System;
-using System.Threading;
-
-namespace DiceGame
+﻿namespace DiceGame
 {
     /// <summary>
     /// This class represents a single 6-sided die
@@ -10,13 +7,11 @@ namespace DiceGame
     {
         #region Instance fields
         private int _faceValue;
-        private Random _generator;
         #endregion
 
         #region Constructor
         public Die()
         {
-            _generator = new Random(); // The generator is used for generating random numbers
             Roll();  // This puts the die in a well-defined state
         }
         #endregion
@@ -35,8 +30,7 @@ namespace DiceGame
         /// </summary>
         public void Roll()
         {
-            Thread.Sleep(10); // This is needed for magical purposes...
-            _faceValue = _generator.Next(6) + 1;
+            _faceValue = RandomNumberGenerator.Generate(1, 6);
         } 
         #endregion
     }

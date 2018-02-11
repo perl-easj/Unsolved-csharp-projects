@@ -10,8 +10,8 @@ namespace SlicesOfPi
     public class PiCalcAlgorithm
     {
         /// <summary>
-        /// Calculates approximate value of Pi. The algorithm is
-        /// incremental, i.e. the approximate value get better and
+        /// Calculates an approximate value of Pi. The algorithm is
+        /// incremental, i.e. the approximate value gets better and
         /// better, the longer the algorithm runs.
         /// Note that this version does NOT use async.
         /// </summary>
@@ -20,13 +20,13 @@ namespace SlicesOfPi
         public double Calculate(int iterations)
         {
             // Setup 
-            Random _generator = new Random();
+            Random generator = new Random();
             int insideUnitCircle = 0;
 
             // Main loop in algorithm
             for (long i = 1; i <= iterations; i++)
             {
-                insideUnitCircle += RandomPointWithinUnitCircle(_generator) ? 1 : 0;
+                insideUnitCircle += RandomPointWithinUnitCircle(generator) ? 1 : 0;
             }
 
             // Return final value of Pi 
@@ -34,44 +34,40 @@ namespace SlicesOfPi
         }
 
         /// <summary>
-        /// Calculates approximate value of Pi. The algorithm is
+        /// Calculates an approximate value of Pi. The algorithm is
         /// incremental, i.e. the approximate value get better and
         /// better, the longer the algorithm runs.
         /// Note that this version of the algorithm is async.
         /// </summary>
         /// <param name="data">Reference to data coordination object</param>
         /// <returns>Final value of Pi, if algorithm is allowed to run to completion</returns>
-        public async Task<double> CalculateAsync(PiCalcData data)
+        public async Task CalculateAsync(PiCalcData data)
         {
             // Setup 
-            Random _generator = new Random();
+            Random generator = new Random();
             int insideUnitCircle = 0;
-            double piCurrent = 0.0;
 
-            // Main loop in algorithm is started as a new Task
+            // Main loop in algorithm is started as a new Task.
             // Note that the task is awaited, i.e. the flow-of-execution
             // returns to the caller of CalculateAsync.
             await Task.Run(() =>
             {
-                for (long i = 1; i <= 1000000000000 && !data.Quit; i++)
+                long iterations = 0;
+                while (!data.Quit)
                 {
-                    insideUnitCircle += RandomPointWithinUnitCircle(_generator) ? 1 : 0;
+                    insideUnitCircle += RandomPointWithinUnitCircle(generator) ? 1 : 0;
+                    iterations++;
 
                     // Update data object
-                    piCurrent = insideUnitCircle * 4.0 / i;
-                    data.Pi = piCurrent;
-                    data.Iterations = i;
+                    data.Pi = insideUnitCircle * 4.0 / iterations;
+                    data.Iterations = iterations;
                 }
             });
-
-            // Execution only reaches this point, if the user 
-            // did not interrupt the calculation.
-            return piCurrent;
         }
 
         /// <summary>
         /// Generates a random point within the unit square,
-        /// and return whether or not the point was within
+        /// and returns whether or not the point was within
         /// the unit circle
         /// </summary>
         private bool RandomPointWithinUnitCircle(Random generator)

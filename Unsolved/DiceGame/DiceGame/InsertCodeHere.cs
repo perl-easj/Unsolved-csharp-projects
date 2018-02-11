@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DiceGame
+﻿namespace DiceGame
 {
     public class InsertCodeHere
     {

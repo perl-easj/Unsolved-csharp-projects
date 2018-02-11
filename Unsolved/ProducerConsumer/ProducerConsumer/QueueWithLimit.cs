@@ -40,10 +40,7 @@ namespace ProducerConsumer
         /// </summary>
         public int CountCurrent
         {
-            get
-            {
-                return _queue.Count;
-            }
+            get { return _queue.Count; }
         }
 
         /// <summary>

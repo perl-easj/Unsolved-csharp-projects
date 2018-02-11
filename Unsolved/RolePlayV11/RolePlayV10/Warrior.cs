@@ -2,18 +2,20 @@
 {
     public class Warrior
     {
-        // Instance fields
+        #region Instance fields
         private string _name;
         private int _level;
+        #endregion
 
-        // Constructor
+        #region Constructor
         public Warrior(string name)
         {
             _name = name;
             _level = 1;
         }
+        #endregion
 
-        // Properties
+        #region Properties
         public string Name
         {
             get { return _name; }
@@ -23,11 +25,13 @@
         {
             get { return _level; }
         }
+        #endregion
 
-        // Methods (just one here so far...)
+        #region Methods
         public void LevelUp()
         {
             _level = _level + 1;
         }
+        #endregion
     }
 }

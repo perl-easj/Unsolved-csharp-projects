@@ -24,8 +24,11 @@ namespace ProducerConsumer
         #endregion
 
         #region Constructor
-        public Reporter(QueueWithLimit<T> queue, Producer<T> producer, Consumer<T> consumer,
-                ReportMode mode = ReportMode.verbose)
+        public Reporter(
+            QueueWithLimit<T> queue, 
+            Producer<T> producer, 
+            Consumer<T> consumer,
+            ReportMode mode = ReportMode.verbose)
         {
             _queue = queue;
             _producer = producer;

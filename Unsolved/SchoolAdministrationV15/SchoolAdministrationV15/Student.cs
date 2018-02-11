@@ -75,7 +75,6 @@ namespace SchoolAdministrationV15
         {
             return $"{Name} (id: {ID})";
         }
-
         #endregion
     }
 }

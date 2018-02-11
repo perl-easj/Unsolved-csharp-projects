@@ -8,37 +8,37 @@
     public interface IDataStructureTester
     {
         /// <summary>
-        /// Add values to an empty collection object
+        /// Insert values into an empty collection object
         /// </summary>
-        long AddInitial(int valuesToAdd, int maxValue);
+        long InsertInitial(int noOfToInserts, int maxValue);
 
         /// <summary>
-        /// Add values to the back of a collection object.
+        /// Insert values at the back of a collection object.
         /// (note that "back" may not be well-defined for
         /// all collection classes).
         /// </summary>
-        long InsertBack(int valuesToAdd, int maxValue);
+        long InsertBack(int noOfToInserts, int maxValue);
 
         /// <summary>
-        /// Add values to the front of a collection object.
+        /// Insert values at the front of a collection object.
         /// (note that "front" may not be well-defined for
         /// all collection classes).
         /// </summary>
-        long InsertFront(int valuesToAdd, int maxValue);
+        long InsertFront(int noOfToInserts, int maxValue);
 
         /// <summary>
         /// Perform randomised lookup of values
         /// </summary>
-        long LookupRandom(int numberOfLookups);
+        long LookupRandom(int noOfLookups);
 
         /// <summary>
         /// Perform randomised deletion of values
         /// </summary>
-        long DeleteRandom(int numberOfDeletes);
+        long DeleteRandom(int noOfDeletes);
 
         /// <summary>
         /// Find random values in collection object.
         /// </summary>
-        long FindRandom(int numberOfFinds, int maxValue);
+        long FindRandom(int noOfFinds, int maxValue);
     }
 }

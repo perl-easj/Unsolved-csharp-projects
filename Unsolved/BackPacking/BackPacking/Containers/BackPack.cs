@@ -92,7 +92,8 @@ namespace BackPacking.Containers
             Console.WriteLine($"Total weight : {WeightCapacityUsed} kg.");
             Console.WriteLine($"Total value  : {TotalValueOfItems}");
 
-            #endregion Console.WriteLine();
+            Console.WriteLine();
         }
+        #endregion
     }
 }
