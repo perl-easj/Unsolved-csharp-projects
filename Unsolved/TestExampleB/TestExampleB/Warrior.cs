@@ -15,7 +15,7 @@ namespace TestExampleB
         public Warrior(string name, int hitPoints)
         {
             // The name must contain at least two non-blank characters
-            if (String.IsNullOrWhiteSpace(name) || name.Length < 2)
+            if (string.IsNullOrWhiteSpace(name) || name.Length < 2)
             {
                 throw new ArgumentException("Name must contain at least two characters");
             }
