@@ -41,7 +41,7 @@ namespace StockTrade
             _id = id;
             _lowerLimit = lowerLimit;
             _upperLimit = upperLimit;
-            _generator = new Random();
+            _generator = new Random(Guid.NewGuid().GetHashCode());
 
             Price = (_upperLimit + _lowerLimit) / 2;
             PriceChanged = null;
