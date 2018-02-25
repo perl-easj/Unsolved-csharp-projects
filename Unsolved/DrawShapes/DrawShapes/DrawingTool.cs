@@ -5,7 +5,7 @@ namespace DrawShapes
     /// <summary>
     /// A class for very primitive drawing...
     /// </summary>
-    public static class DrawingTool
+    public class DrawingTool
     {
         public static void DrawOneStar()
         {

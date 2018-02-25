@@ -3,7 +3,7 @@
     /// <summary>
     /// This class acts as a cache of already calculated results
     /// </summary>
-    class Cache
+    public class Cache
     {
         #region Instance fields
         private int[,] cacheValues;

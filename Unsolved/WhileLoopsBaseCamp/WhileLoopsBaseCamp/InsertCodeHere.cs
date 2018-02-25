@@ -56,18 +56,30 @@ namespace WhileLoopsBaseCamp
 
             // Case 5
             // Print out the numbers 3,5,7,9
+            Console.WriteLine("Start of Case 5");
+
+            Console.WriteLine("End of Case 5");
 
 
             // Case 6
             // Print out the numbers 0,1,3,7,15,31
+            Console.WriteLine("Start of Case 6");
+
+            Console.WriteLine("End of Case 6");
 
 
             // Case 7
             // Print out the numbers 100,50,25,12,6,3,1
+            Console.WriteLine("Start of Case 7");
+
+            Console.WriteLine("End of Case 7");
 
 
             // Case 8 (DIFFICULT)
             // Print out the numbers 10,9,12,7,14,5,16,3,18,1
+            Console.WriteLine("Start of Case 8");
+
+            Console.WriteLine("End of Case 8");
 
 
             // The LAST line of code should be ABOVE this line

@@ -5,7 +5,7 @@ namespace CalculationSimulation
     /// <summary>
     /// This class manages the execution of a calculation simulation
     /// </summary>
-    class Manager
+    public class Manager
     {
         /// <summary>
         /// Runs the simulation

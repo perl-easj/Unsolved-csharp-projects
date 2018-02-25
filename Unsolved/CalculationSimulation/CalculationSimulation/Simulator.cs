@@ -8,7 +8,7 @@ namespace CalculationSimulation
     /// However, the simulator may optionally use a cache to speed
     /// up the caluclation.
     /// </summary>
-    class Simulator
+    public class Simulator
     {
         #region Instance fields
         private Random _generator;

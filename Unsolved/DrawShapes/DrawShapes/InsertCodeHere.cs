@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DrawShapes
+﻿namespace DrawShapes
 {
     public class InsertCodeHere
     {

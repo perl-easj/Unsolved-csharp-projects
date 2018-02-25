@@ -9,7 +9,6 @@
     public class Beast
     {
         #region Instance fields
-
         private string _name;
         private int _hitPoints;
         private int _maxHitPoints;

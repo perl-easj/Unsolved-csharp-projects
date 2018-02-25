@@ -7,7 +7,7 @@ namespace RolePlayV20
     /// This class implements a simple logging system, where strings can be collected
     /// one by one. The entire set of strings can then be printed.
     /// </summary>
-    class BattleLog
+    public class BattleLog
     {
         #region Instance fields
         private List<string> _log;

@@ -2,6 +2,7 @@
 {
     public class MysticNumbers
     {
+        #region Methods
         public int ThreeNumbers(int a, int b, int c)
         {
             int result;
@@ -24,6 +25,7 @@
             }
 
             return result;
-        }
+        } 
+        #endregion
     }
 }

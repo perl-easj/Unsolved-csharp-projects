@@ -20,7 +20,7 @@ namespace RolePlayV20
         /// </summary>
         public int Next(int min, int max)
         {
-            int value = min + _generator.Next(max - min);
+            int value = min + _generator.Next(max - min + 1);
             return value;
         }
     }
