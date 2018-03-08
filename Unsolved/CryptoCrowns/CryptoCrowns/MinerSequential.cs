@@ -11,7 +11,7 @@ namespace CryptoCrowns
         public override void MineSingleCryptoCrown()
         {
             bool foundCrown = false;
-            for (int key = 0; (key <= CurrentMaxKey) && !foundCrown; key++)
+            for (long key = 0; (key <= CurrentMaxKey) && !foundCrown; key++)
             {
                 foundCrown = AttemptToMineSingleCryptoCrown(key);
             }
