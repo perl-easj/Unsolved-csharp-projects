@@ -33,7 +33,7 @@ namespace Client
             if (userInput == "w")
             {
                 Console.WriteLine("Using Web Service...");
-                return new WebServiceSourceFactory("http://moviedbwebserviceperl.azurewebsites.net/");
+                return new WebServiceSourceFactory("http://localhost:1099/");
             }
             if (userInput == "e")
             {

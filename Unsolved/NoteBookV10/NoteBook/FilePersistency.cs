@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace NoteBook
 {
-    public class FilePersistency<T> where T : class
+    public class FilePersistency<T> : IDataSource<T> where T : class
     {
         private const string FileName = "data.json";
         private CreationCollisionOption _options;
@@ -19,14 +19,14 @@ namespace NoteBook
             _folder = ApplicationData.Current.LocalFolder;
         }
 
-        public async Task Save(List<T> data)
+        public async Task SaveAsync(List<T> data)
         {            
             var dataFile = await _folder.CreateFileAsync(FileName, _options);
             string dataJSON = JsonConvert.SerializeObject(data);
             await FileIO.WriteTextAsync(dataFile, dataJSON);
         }
 
-        public async Task<List<T>> Load()
+        public async Task<List<T>> LoadAsync()
         {
             try
             {
@@ -36,7 +36,7 @@ namespace NoteBook
             }
             catch (FileNotFoundException)
             {
-                await Save(new List<T>());
+                await SaveAsync(new List<T>());
                 return new List<T>();
             }
         }

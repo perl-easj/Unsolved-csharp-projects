@@ -8,7 +8,7 @@
     mc:Ignorable="d">
     
     <Page.DataContext>
-        <local:NoteMasterDetailsViewModel/>
+        <local:NotePageViewModel/>
     </Page.DataContext>
     
     <Page.Resources>
@@ -31,6 +31,7 @@
         </Style>
         <Style x:Key="ButtonStyle" TargetType="Button">
             <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Width" Value="200"/>
             <Setter Property="Margin" Value="5,10,15,5"/>
         </Style>
     </Page.Resources>
@@ -38,13 +39,13 @@
     <StackPanel Orientation="Horizontal">
 
         <ListView Width="300" Margin="10,10,10,10"
-            ItemsSource="{Binding ItemViewModelCollection}" 
-            SelectedItem="{Binding ItemViewModelSelected, Mode=TwoWay}">
+            ItemsSource="{Binding DataViewModelCollection}" 
+            SelectedItem="{Binding DataViewModelSelected, Mode=TwoWay}">
             
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Style="{StaticResource ItemStyle}"
-                               Text="{Binding Description}"/>
+                               Text="{Binding Title}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
             
@@ -55,17 +56,19 @@
             <TextBlock Style="{StaticResource LeadTextStyle}" Text="Title"/>
 
             <TextBox Style="{StaticResource TextBoxStyle}"
-                     Text="{Binding DetailsViewModel.Title, Mode=TwoWay}"/>
+                     IsEnabled="{Binding EditEnabled}"
+                     Text="{Binding DataViewModelSelected.Title, Mode=TwoWay}"/>
 
             <TextBlock Style="{StaticResource LeadTextStyle}" Text="Content"/>
 
             <TextBox Style="{StaticResource TextBoxStyle}"
                      Height="200" TextWrapping="Wrap" IsSpellCheckEnabled="False"
-                     Text="{Binding DetailsViewModel.Content, Mode=TwoWay}"/>
+                     IsEnabled="{Binding EditEnabled}"
+                     Text="{Binding DataViewModelSelected.Content, Mode=TwoWay}"/>
             
-            <StackPanel Orientation="Horizontal">
-                <Button Content="Add" Command="{Binding AddCommand}" Style="{StaticResource ButtonStyle}"/>
-                <Button Content="Delete" Command="{Binding DeleteCommand}" Style="{StaticResource ButtonStyle}"/>
+            <StackPanel>
+                <Button Content="Add New Note" Command="{Binding AddCommand}" Style="{StaticResource ButtonStyle}"/>
+                <Button Content="Delete Selected Note" Command="{Binding DeleteCommand}" Style="{StaticResource ButtonStyle}"/>
             </StackPanel>
             
         </StackPanel>
