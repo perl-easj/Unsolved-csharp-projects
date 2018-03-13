@@ -4,11 +4,14 @@ using System.Runtime.CompilerServices;
 
 namespace ExamAdmV15
 {
-    class StudentCollection : INotifyPropertyChanged
+    public class StudentCollection : INotifyPropertyChanged
     {
+        #region Instance fields
         private List<Student> _students;
         private Student _selectedStudent;
+        #endregion
 
+        #region Constructor
         public StudentCollection()
         {
             _students = new List<Student>();
@@ -21,7 +24,9 @@ namespace ExamAdmV15
 
             _selectedStudent = _students[0];
         }
+        #endregion
 
+        #region Properties for Data Binding
         public List<Student> Students
         {
             get { return _students; }
@@ -36,12 +41,14 @@ namespace ExamAdmV15
                 OnPropertyChanged();
             }
         }
+        #endregion
 
+        #region INotifyPropertyChanged code
         public event PropertyChangedEventHandler PropertyChanged;
-
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        } 
+        #endregion
     }
 }

@@ -9,7 +9,7 @@
     mc:Ignorable="d">
 
     <Page.DataContext>
-        <viewModel:StudentMasterDetailsViewModel/>
+        <viewModel:StudentPageViewModel/>
     </Page.DataContext>
 
     <Page.Resources>
@@ -27,14 +27,14 @@
     <StackPanel Orientation="Horizontal">
         <!-- Master Part -->
         <StackPanel>
-            <ListView ItemsSource="{Binding StudentItemViewModelCollection}"
-                  SelectedItem="{Binding StudentItemViewModelSelected, Mode=TwoWay}">
+            <ListView ItemsSource="{Binding StudentDataViewModelCollection}"
+                  SelectedItem="{Binding SelectedStudent, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
                             <Image Source="{Binding ImageSource}" 
                                    Height="80" Width="80"/>
-                            <TextBlock Text="{Binding Description}" 
+                            <TextBlock Text="{Binding NameText}" 
                                        FontSize="18" VerticalAlignment="Center" Margin="10,10,10,10"/>
                         </StackPanel>
                     </DataTemplate>
@@ -45,13 +45,14 @@
 
         <!-- Details Part -->
         <StackPanel>
-            <StackPanel Orientation="Horizontal" Background="BlanchedAlmond">
-                <Image Source="{Binding StudentDetailsViewModel.ImageSource}"
+            <StackPanel Orientation="Horizontal" Margin="10,10,10,10"
+                        BorderThickness="3,3,3,3" BorderBrush="DarkGray">
+                <Image Source="{Binding SelectedStudent.ImageSource}"
                        VerticalAlignment="Top" Margin="10,10,10,10" Height="200" Width="200"/>
                 <StackPanel Margin="20,20,20,20">
-                    <TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding StudentDetailsViewModel.NameText}"/>
-                    <TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding StudentDetailsViewModel.AgeText}"/>
-                    <TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding StudentDetailsViewModel.ResidenceText}"/>
+                    <TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding SelectedStudent.NameText}"/>
+                    <TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding SelectedStudent.AgeText}"/>
+                    <TextBlock Style="{StaticResource TextBlockStyle}" Text="{Binding SelectedStudent.ResidenceText}"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

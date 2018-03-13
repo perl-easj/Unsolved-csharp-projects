@@ -59,31 +59,47 @@
                 <ColumnDefinition Width="210"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource TextBlockStyle}" 
+            <TextBlock Grid.Row="0" Grid.Column="0" 
+                       Style="{StaticResource TextBlockStyle}" 
                        Text="Name"/>
-            <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource TextBoxStyle}"
-                     x:Name="studentName" Text="{Binding SelectedStudent.Name, Mode=TwoWay}"/>
 
-            <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource TextBlockStyle}" 
+            <TextBox Grid.Row="0" Grid.Column="1" 
+                     Style="{StaticResource TextBoxStyle}"
+                     Text="{Binding SelectedStudent.Name, Mode=TwoWay}"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" 
+                       Style="{StaticResource TextBlockStyle}" 
                        Text="Subject"/>
-            <ComboBox Grid.Row="1" Grid.Column="1" Style="{StaticResource ComboBoxStyle}"
-                      x:Name="subjectList" 
+
+            <ComboBox Grid.Row="1" Grid.Column="1" 
+                      Style="{StaticResource ComboBoxStyle}"
                       ItemsSource="{Binding Subjects}"
                       SelectedItem="{Binding SelectedStudent.Subject, Mode=TwoWay}"/>
 
-            <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource TextBlockStyle}" 
+            <TextBlock Grid.Row="2" Grid.Column="0" 
+                       Style="{StaticResource TextBlockStyle}" 
                        Text="Score"/>
-            <Slider Grid.Row="2" Grid.Column="1" Maximum="100" Minimum="0" Width="200"
-                    x:Name="score" Value="{Binding SelectedStudent.Score, Mode=TwoWay}" />
 
-            <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource TextBlockStyle}" 
+            <Slider Grid.Row="2" Grid.Column="1" 
+                    Maximum="100" Minimum="0" Width="200"
+                    Value="{Binding SelectedStudent.Score, Mode=TwoWay}" />
+
+            <TextBlock Grid.Row="3" Grid.Column="0" 
+                       Style="{StaticResource TextBlockStyle}" 
                        Text="New subject"/>
-            <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource TextBoxStyle}" />
 
-            <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource TextBlockStyle}" 
+            <TextBox Grid.Row="3" Grid.Column="1" 
+                     Style="{StaticResource TextBoxStyle}" 
+                     Text="Needs Binding..."/>
+
+            <TextBlock Grid.Row="4" Grid.Column="0" 
+                       Style="{StaticResource TextBlockStyle}" 
                        Text="No. of subjects"/>
-            <TextBox Grid.Row="4" Grid.Column="1" Style="{StaticResource TextBoxStyle}" IsEnabled="False"
+
+            <TextBox Grid.Row="4" Grid.Column="1" 
+                     Style="{StaticResource TextBoxStyle}" IsEnabled="False"
                      Text="{Binding NoOfSubjects}"/>
+
         </Grid>
     </StackPanel>
 </Page>

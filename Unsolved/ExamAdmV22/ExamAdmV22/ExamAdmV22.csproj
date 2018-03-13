@@ -103,9 +103,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Student.cs" />
     <Compile Include="Model\StudentCatalog.cs" />
-    <Compile Include="ViewModel\StudentDetailsViewModel.cs" />
-    <Compile Include="ViewModel\StudentItemViewModel.cs" />
-    <Compile Include="ViewModel\StudentMasterDetailsViewModel.cs" />
+    <Compile Include="ViewModel\StudentDataViewModel.cs" />
+    <Compile Include="ViewModel\StudentPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

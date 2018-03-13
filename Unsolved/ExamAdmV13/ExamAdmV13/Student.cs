@@ -3,12 +3,24 @@ using System.Runtime.CompilerServices;
 
 namespace ExamAdmV13
 {
-    class Student : INotifyPropertyChanged
+    public class Student : INotifyPropertyChanged
     {
+        #region Instance fields
         private string _name;
         private string _subject;
         private int _score;
+        #endregion
 
+        #region Constructor
+        public Student()
+        {
+            _name = "Sarah";
+            _subject = "Economics";
+            _score = 85;
+        }
+        #endregion
+
+        #region Properties for Data Binding
         public string Name
         {
             get { return _name; }
@@ -37,14 +49,8 @@ namespace ExamAdmV13
                 _score = value;
                 OnPropertyChanged();
             }
-        }
-
-        public Student()
-        {
-            _name = "Sarah";
-            _subject = "Economics";
-            _score = 85;
-        }
+        } 
+        #endregion
 
         #region OnPropertyChanged code
         public event PropertyChangedEventHandler PropertyChanged;

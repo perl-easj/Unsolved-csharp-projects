@@ -97,9 +97,8 @@
     </Compile>
     <Compile Include="BaseClasses\DeleteCommandBase.cs" />
     <Compile Include="BaseClasses\DomainClassBase.cs" />
-    <Compile Include="BaseClasses\ItemViewModelBase.cs" />
+    <Compile Include="BaseClasses\DataViewModelBase.cs" />
     <Compile Include="BaseClasses\CatalogBase.cs" />
-    <Compile Include="BaseClasses\ViewModelFactoryBase.cs" />
     <Compile Include="DomainClasses\DeleteCommand.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -107,10 +106,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DomainClasses\Student.cs" />
     <Compile Include="DomainClasses\StudentCatalog.cs" />
-    <Compile Include="DomainClasses\StudentItemViewModel.cs" />
-    <Compile Include="DomainClasses\StudentMasterDetailsViewModel.cs" />
-    <Compile Include="BaseClasses\MasterDetailsViewModelBase.cs" />
-    <Compile Include="DomainClasses\StudentViewModelFactory.cs" />
+    <Compile Include="DomainClasses\StudentDataViewModel.cs" />
+    <Compile Include="DomainClasses\StudentPageViewModel.cs" />
+    <Compile Include="BaseClasses\PageViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

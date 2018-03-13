@@ -1,7 +1,8 @@
 ﻿namespace ExamAdmV15
 {
-    class Student
+    public class Student
     {
+        #region Instance fields
         private string _name;
         private int _yearOfBirth;
         private string _country;
@@ -12,7 +13,34 @@
         private string _city;
         private int _phone;
         private string _email;
+        #endregion
 
+        #region Constructor
+        public Student(
+            string name,
+            int yearOfBirth,
+            string country,
+            string imageSource,
+            string address,
+            int zipCode,
+            string city,
+            int phone,
+            string email)
+        {
+            _name = name;
+            _yearOfBirth = yearOfBirth;
+            _country = country;
+            _imageSource = imageSource;
+
+            _address = address;
+            _zipCode = zipCode;
+            _city = city;
+            _phone = phone;
+            _email = email;
+        }
+        #endregion
+
+        #region Properties for Data Binding
         public string Name
         {
             get { return _name; }
@@ -66,29 +94,7 @@
         public string BirthStr
         {
             get { return "(Born " + YearOfBirth + ")"; }
-        }
-
-        public Student(
-            string name, 
-            int yearOfBirth, 
-            string country, 
-            string imageSource,
-            string address,
-            int zipCode,
-            string city,
-            int phone,
-            string email)
-        {
-            _name = name;
-            _yearOfBirth = yearOfBirth;
-            _country = country;
-            _imageSource = imageSource;
-
-            _address = address;
-            _zipCode = zipCode;
-            _city = city;
-            _phone = phone;
-            _email = email;
-        }
+        } 
+        #endregion
     }
 }

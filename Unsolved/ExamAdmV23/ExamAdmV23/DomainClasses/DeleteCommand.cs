@@ -6,9 +6,9 @@ namespace ExamAdmV23.DomainClasses
     public class DeleteCommand : ICommand
     {
         private StudentCatalog _catalog;
-        private StudentMasterDetailsViewModel _viewModel;
+        private StudentPageViewModel _viewModel;
 
-        public DeleteCommand(StudentCatalog catalog, StudentMasterDetailsViewModel viewModel)
+        public DeleteCommand(StudentCatalog catalog, StudentPageViewModel viewModel)
         {
             _catalog = catalog;
             _viewModel = viewModel;
@@ -16,19 +16,19 @@ namespace ExamAdmV23.DomainClasses
 
         public bool CanExecute(object parameter)
         {
-            return _viewModel.StudentItemViewModelSelected != null;
+            return _viewModel.StudentSelected != null;
         }
 
         public void Execute(object parameter)
         {
             // Delete from catalog
-            _catalog.Delete(_viewModel.StudentItemViewModelSelected.DomainObject.Key);
+            _catalog.Delete(_viewModel.StudentSelected.DomainObject.Key);
 
             // Set selection to null
-            _viewModel.StudentItemViewModelSelected = null;
+            _viewModel.StudentSelected = null;
 
             // Refresh the item list
-            _viewModel.RefreshStudentItemViewModelCollection();
+            _viewModel.RefreshStudentDataViewModelCollection();
         }
 
         public void RaiseCanExecuteChanged()

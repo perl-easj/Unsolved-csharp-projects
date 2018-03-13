@@ -8,12 +8,12 @@
     mc:Ignorable="d">
 
     <Page.DataContext>
-        <domainClasses:StudentMasterDetailsViewModel/>
+        <domainClasses:StudentPageViewModel/>
     </Page.DataContext>
 
     <StackPanel>
-        <ListView ItemsSource="{Binding StudentItemViewModelCollection}"
-                  SelectedItem="{Binding StudentItemViewModelSelected, Mode=TwoWay}">
+        <ListView ItemsSource="{Binding StudentDataViewModelCollection}"
+                  SelectedItem="{Binding StudentSelected, Mode=TwoWay}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">

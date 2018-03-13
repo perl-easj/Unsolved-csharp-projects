@@ -4,7 +4,7 @@ using System.Windows.Input;
 namespace ExamAdmV23.BaseClasses
 {
     public class DeleteCommandBase<TDomainClass, TViewModel> : ICommand
-        where TViewModel : MasterDetailsViewModelBase<TDomainClass>
+        where TViewModel : PageViewModelBase<TDomainClass>
         where TDomainClass : DomainClassBase
     {
         private CatalogBase<TDomainClass> _catalog;
@@ -18,19 +18,19 @@ namespace ExamAdmV23.BaseClasses
 
         public bool CanExecute(object parameter)
         {
-            return _viewModel.ItemViewModelSelected != null;
+            return _viewModel.ItemSelected != null;
         }
 
         public void Execute(object parameter)
         {
             // Delete from catalog
-            _catalog.Delete(_viewModel.ItemViewModelSelected.DomainObject.Key);
+            _catalog.Delete(_viewModel.ItemSelected.DomainObject.Key);
 
             // Set selection to null
-            _viewModel.ItemViewModelSelected = null;
+            _viewModel.ItemSelected = null;
 
             // Refresh the item list
-            _viewModel.RefreshItemViewModelCollection();
+            _viewModel.RefreshDataViewModelCollection();
         }
 
         public void RaiseCanExecuteChanged()

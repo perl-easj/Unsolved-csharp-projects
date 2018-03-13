@@ -5,18 +5,23 @@ using ExamAdmV22.Model;
 
 namespace ExamAdmV22.ViewModel
 {
-    public class StudentDetailsViewModel : INotifyPropertyChanged
+    public class StudentDataViewModel : INotifyPropertyChanged
     {
         private Student _domainObject;
 
         #region Constructor
-        public StudentDetailsViewModel(Student s)
+        public StudentDataViewModel(Student s)
         {
             _domainObject = s;
         }
         #endregion
 
         #region Properties for Data Binding
+        public Student DomainObject
+        {
+            get { return _domainObject; }
+        }
+
         public string ImageSource
         {
             get { return _domainObject.ImageSource; }

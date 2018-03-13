@@ -52,20 +52,33 @@
                 <ColumnDefinition Width="210"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource TextBlockStyle}" 
+            <TextBlock Grid.Row="0" Grid.Column="0" 
+                       Style="{StaticResource TextBlockStyle}" 
                        Text="Name"/>
-            <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource TextBoxStyle}"
-                     x:Name="studentName" Text="{Binding Name}"/>
 
-            <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource TextBlockStyle}" 
+            <TextBox Grid.Row="0" Grid.Column="1" 
+                     Style="{StaticResource TextBoxStyle}"
+                     x:Name="studentName" 
+                     Text="{Binding Name}"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" 
+                       Style="{StaticResource TextBlockStyle}" 
                        Text="Subject"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource TextBoxStyle}"
-                     x:Name="subject" Text="{Binding Subject}"/>
 
-            <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource TextBlockStyle}" 
+            <TextBox Grid.Row="1" Grid.Column="1" 
+                     Style="{StaticResource TextBoxStyle}"
+                     x:Name="subject" 
+                     Text="{Binding Subject}"/>
+
+            <TextBlock Grid.Row="2" Grid.Column="0" 
+                       Style="{StaticResource TextBlockStyle}" 
                        Text="Score"/>
-            <Slider Grid.Row="2" Grid.Column="1" Maximum="100" Minimum="0" Width="200"
-                    x:Name="score" Value="{Binding Score}" />
+
+            <Slider Grid.Row="2" Grid.Column="1" 
+                    Maximum="100" Minimum="0" Width="200"
+                    x:Name="score" 
+                    Value="{Binding Score}" />
+
         </Grid>
     </StackPanel>
 </Page>

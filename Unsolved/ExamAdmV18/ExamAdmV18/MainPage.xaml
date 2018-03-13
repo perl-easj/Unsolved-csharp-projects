@@ -25,7 +25,7 @@
         </Style>
     </Page.Resources>
 
-    <StackPanel Orientation="Horizontal" Background="Bisque">
+    <StackPanel Orientation="Horizontal">
         <ListView ItemsSource="{Binding Students}" SelectedItem="{Binding SelectedStudent, Mode=TwoWay}">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:Student">
@@ -43,7 +43,8 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <StackPanel Orientation="Horizontal" Background="BlanchedAlmond">
+        <StackPanel Orientation="Horizontal" Margin="10,10,10,10"
+                    BorderThickness="3,3,3,3" BorderBrush="DarkGray">
             <Image Source="{Binding SelectedStudent.ImageSource}"
                    VerticalAlignment="Top" Margin="10,10,10,10" Height="300" Width="300"/>
             <StackPanel Margin="20,20,20,20">

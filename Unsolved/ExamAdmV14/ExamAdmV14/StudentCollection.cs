@@ -2,7 +2,7 @@
 
 namespace ExamAdmV14
 {
-    class StudentCollection
+    public class StudentCollection
     {
         private List<Student> _students;
 

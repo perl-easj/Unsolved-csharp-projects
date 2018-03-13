@@ -1,24 +1,23 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using ExamAdmV22.Model;
 
-namespace ExamAdmV22.ViewModel
+namespace ExamAdmV21
 {
-    public class StudentItemViewModel : INotifyPropertyChanged
+    public class StudentDataViewModel : INotifyPropertyChanged
     {
         private Student _domainObject;
 
         #region Constructor
-        public StudentItemViewModel(Student s)
+        public StudentDataViewModel(Student obj)
         {
-            _domainObject = s;
+            _domainObject = obj;
         }
         #endregion
 
         #region Properties for Data Binding
-        public Student DomainObject
+        public string Name
         {
-            get { return _domainObject; }
+            get { return _domainObject.Name; }
         }
 
         public string ImageSource
@@ -26,15 +25,19 @@ namespace ExamAdmV22.ViewModel
             get { return _domainObject.ImageSource; }
         }
 
-        public string Description
+        public string CountryStr
         {
-            get { return _domainObject.Name; }
+            get { return "From " + _domainObject.Country; }
         }
+
+        public string BirthStr
+        {
+            get { return "(Born " + _domainObject.YearOfBirth + ")"; }
+        } 
         #endregion
 
         #region Code for OnPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
-
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

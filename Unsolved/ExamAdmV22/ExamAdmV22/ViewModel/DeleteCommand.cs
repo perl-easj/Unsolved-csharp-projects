@@ -7,9 +7,9 @@ namespace ExamAdmV22.ViewModel
     public class DeleteCommand : ICommand
     {
         private StudentCatalog _catalog;
-        private StudentMasterDetailsViewModel _viewModel;
+        private StudentPageViewModel _viewModel;
 
-        public DeleteCommand(StudentCatalog catalog, StudentMasterDetailsViewModel viewModel)
+        public DeleteCommand(StudentCatalog catalog, StudentPageViewModel viewModel)
         {
             _catalog = catalog;
             _viewModel = viewModel;
@@ -17,16 +17,16 @@ namespace ExamAdmV22.ViewModel
 
         public bool CanExecute(object parameter)
         {
-            return _viewModel.StudentItemViewModelSelected != null;
+            return _viewModel.SelectedStudent != null;
         }
 
         public void Execute(object parameter)
         {
             // Delete from catalog
-            _catalog.Delete(_viewModel.StudentItemViewModelSelected.DomainObject.Key);
+            _catalog.Delete(_viewModel.SelectedStudent.DomainObject.Key);
 
             // Set selection to null
-            _viewModel.StudentItemViewModelSelected = null;
+            _viewModel.SelectedStudent = null;
 
             // Refresh the item list
             _viewModel.RefreshStudentItemViewModelCollection();
