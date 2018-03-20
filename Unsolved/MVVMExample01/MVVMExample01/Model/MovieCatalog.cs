@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using Catalog.Implementation;
+using Extensions.Model.Implementation;
 
 namespace MVVMExample01.Model
 {
@@ -9,9 +9,9 @@ namespace MVVMExample01.Model
     /// and as Data Context for the Movie View. It therefore needs to
     /// implement INotifyPropertyChanged.
     /// </summary>
-    public class MovieCatalog : InMemoryCatalog<Movie>, INotifyPropertyChanged
+    public class MovieCatalog : FilePersistableCatalogWithoutTransformation<Movie>, INotifyPropertyChanged
     {
-        #region Pure Catalog implementation
+        #region Catalog implementation
         /// <summary>
         /// Constructor just adds some domain objects
         /// directly to the Catalog
@@ -42,13 +42,14 @@ namespace MVVMExample01.Model
                 OnPropertyChanged();
             }
         }
+        #endregion
 
-        // Standard INotifyPropertyChanged implementation
+        #region INotifyPropertyChanged code
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        } 
+        }   
         #endregion
     }
 }

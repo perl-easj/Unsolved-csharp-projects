@@ -47,7 +47,9 @@
         <!-- ListView (Master) -->
         <ListView 
             ItemsSource="{Binding ItemCollection}"
-            SelectedItem="{Binding ItemSelected, Mode=TwoWay}">
+            SelectedItem="{Binding ItemSelected, Mode=TwoWay}"
+            IsEnabled="{Binding ControlStates[ItemSelectorControl].Enabled}"
+            Visibility="{Binding ControlStates[ItemSelectorControl].VisibilityState}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Description}" FontSize="24" HorizontalAlignment="Center"/>

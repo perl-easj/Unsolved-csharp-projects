@@ -31,12 +31,10 @@ namespace ConsoleClient
         }
         #endregion
 
-        #region Implementation of IPersistentSource
+        #region Implementation of Data Source "interface"
         public async Task<List<T>> Load()
         {
-            // Retrieve DTO from Web Service
-            string requestURI = BuildRequestURI(APIMethod.Load);
-            return await InvokeHTTPClientMethodWithReturnValueAsync<List<T>>(() => _httpClient.GetAsync(requestURI));
+            return await InvokeHTTPClientMethodWithReturnValueAsync<List<T>>(() => _httpClient.GetAsync(BuildRequestURI(APIMethod.Load)));
         }
 
         public async Task Create(T obj)

@@ -10,6 +10,7 @@ namespace ConsoleClient
         static void Main(string[] args)
         {
             string serverURL = "http://WRITETHENAMEOFYOUROWNWEBSERVICEHERE.azurewebsites.net";
+            // string serverURL = "https://demoaserver20180315.azurewebsites.net"; // Use in case of emergency :-)
 
             TestAPI<Car>(serverURL, "Cars");
             TestAPI<Customer>(serverURL, "Customers");

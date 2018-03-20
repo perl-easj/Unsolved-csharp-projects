@@ -126,7 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.0.1</Version>
+      <Version>6.0.8</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -136,23 +136,26 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="CatalogImplementation">
-      <HintPath>..\..\..\..\MVVMStarterLibrary\CatalogImplementation\bin\Debug\CatalogImplementation.dll</HintPath>
+    <Reference Include="AddOns">
+      <HintPath>..\..\..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\AddOns.dll</HintPath>
     </Reference>
-    <Reference Include="CatalogInterfaces">
-      <HintPath>..\..\..\..\MVVMStarterLibrary\CatalogInterfaces\bin\Debug\CatalogInterfaces.dll</HintPath>
+    <Reference Include="Commands">
+      <HintPath>..\..\..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\Commands.dll</HintPath>
     </Reference>
-    <Reference Include="DataTransformationImplementation">
-      <HintPath>..\..\..\..\MVVMStarterLibrary\DataTransformationImplementation\bin\Debug\DataTransformationImplementation.dll</HintPath>
+    <Reference Include="Controllers">
+      <HintPath>..\..\..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\Controllers.dll</HintPath>
     </Reference>
-    <Reference Include="DataTransformationInterfaces">
-      <HintPath>..\..\..\..\MVVMStarterLibrary\ExtensionsCommands\bin\Debug\DataTransformationInterfaces.dll</HintPath>
+    <Reference Include="Data">
+      <HintPath>..\..\..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\Data.dll</HintPath>
     </Reference>
-    <Reference Include="InMemoryStorageImplementation">
-      <HintPath>..\..\..\..\MVVMStarterLibrary\ExtensionsViewModel\bin\Debug\InMemoryStorageImplementation.dll</HintPath>
+    <Reference Include="Extensions">
+      <HintPath>..\..\..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="InMemoryStorageInterfaces">
-      <HintPath>..\..\..\..\MVVMStarterLibrary\InMemoryStorageImplementation\bin\Debug\InMemoryStorageInterfaces.dll</HintPath>
+    <Reference Include="Model">
+      <HintPath>..\..\..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\Model.dll</HintPath>
+    </Reference>
+    <Reference Include="ViewModel">
+      <HintPath>..\..\..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\ViewModel.dll</HintPath>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
