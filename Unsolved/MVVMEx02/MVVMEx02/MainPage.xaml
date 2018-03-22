@@ -55,7 +55,6 @@
             </ListView.ItemTemplate>
         </ListView>
 
-
         <!-- Properties (Details) -->
         <StackPanel Grid.Row="0" Grid.Column="1" BorderThickness="3,3,3,3" BorderBrush="Gray">
             <StackPanel Orientation="Horizontal">
@@ -71,6 +70,5 @@
             <Button Content="Delete" Style="{StaticResource ButtonStyle}"
                     Command="{Binding DeleteCommand}"/>
         </StackPanel>
-
     </Grid>
 </Page>

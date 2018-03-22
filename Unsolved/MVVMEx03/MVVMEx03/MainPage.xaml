@@ -70,6 +70,5 @@
             <Button Content="Delete" Style="{StaticResource ButtonStyle}"
                     Command="{Binding DeleteCommand}"/>
         </StackPanel>
-
     </Grid>
 </Page>

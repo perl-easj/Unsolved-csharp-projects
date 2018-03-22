@@ -8,12 +8,8 @@ namespace MVVMEx01.Model
     /// </summary>
     public class Movie : StorableBase
     {
-        #region Constructors
-        public Movie() : base(NullKey)
-        {
-        }
-
-        public Movie(string title, int year) : base(NullKey)
+        #region Constructor
+        public Movie(string title, int year)
         {
             Title = title;
             Year = year;

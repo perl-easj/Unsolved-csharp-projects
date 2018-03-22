@@ -111,6 +111,14 @@
     <None Include="MVVMEx03_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Libraries\AddOns.dll" />
+    <Content Include="Libraries\Commands.dll" />
+    <Content Include="Libraries\Controllers.dll" />
+    <Content Include="Libraries\Data.dll" />
+    <Content Include="Libraries\DataSources.dll" />
+    <Content Include="Libraries\Extensions.dll" />
+    <Content Include="Libraries\Model.dll" />
+    <Content Include="Libraries\ViewModel.dll" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -136,29 +144,37 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="AddOns">
-      <HintPath>..\..\..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\AddOns.dll</HintPath>
+    <Reference Include="AddOns, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\AddOns.dll</HintPath>
     </Reference>
-    <Reference Include="Commands">
-      <HintPath>..\..\..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\Commands.dll</HintPath>
+    <Reference Include="Commands, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Commands.dll</HintPath>
     </Reference>
-    <Reference Include="Controllers">
-      <HintPath>..\..\..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\Controllers.dll</HintPath>
+    <Reference Include="Controllers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Controllers.dll</HintPath>
     </Reference>
-    <Reference Include="Data">
-      <HintPath>..\..\..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\Data.dll</HintPath>
+    <Reference Include="Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Data.dll</HintPath>
     </Reference>
-    <Reference Include="DataSources">
-      <HintPath>..\..\..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\DataSources.dll</HintPath>
+    <Reference Include="DataSources, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\DataSources.dll</HintPath>
     </Reference>
-    <Reference Include="Extensions">
-      <HintPath>..\..\..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\Extensions.dll</HintPath>
+    <Reference Include="Extensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="Model">
-      <HintPath>..\..\..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\Model.dll</HintPath>
+    <Reference Include="Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Model.dll</HintPath>
     </Reference>
-    <Reference Include="ViewModel">
-      <HintPath>..\..\..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\ViewModel.dll</HintPath>
+    <Reference Include="ViewModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\ViewModel.dll</HintPath>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

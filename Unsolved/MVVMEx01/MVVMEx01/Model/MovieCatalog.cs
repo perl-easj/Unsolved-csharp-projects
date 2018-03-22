@@ -11,7 +11,7 @@ namespace MVVMEx01.Model
     /// </summary>
     public class MovieCatalog : FilePersistableCatalogWithoutTransformation<Movie>, INotifyPropertyChanged
     {
-        #region Catalog implementation
+        #region Constructor
         /// <summary>
         /// Constructor just adds some domain objects
         /// directly to the Catalog

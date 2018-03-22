@@ -9,11 +9,11 @@ namespace MVVMEx03.Model
     public class Movie : CopyableBase
     {
         #region Constructors
-        public Movie() : base(NullKey)
+        public Movie()
         {
         }
 
-        public Movie(string title, int year) : base(NullKey)
+        public Movie(string title, int year)
         {
             Title = title;
             Year = year;

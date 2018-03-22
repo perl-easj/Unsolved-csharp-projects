@@ -94,8 +94,6 @@
                              Visibility="{Binding ControlStates[StudioName].VisibilityState}"
                              Text="{Binding ItemDetails.StudioName, Mode=TwoWay}" />
                 </StackPanel>
-
-
             </StackPanel>
 
             <!--Command buttons-->
@@ -138,7 +136,6 @@
                                  Visibility="{Binding ControlStates[ReadStateControl].VisibilityState}"
                                  Command="{Binding StateCommand[ReadStateCommand]}" />
             </StackPanel>
-
         </StackPanel>
     </Grid>
 </Page>
