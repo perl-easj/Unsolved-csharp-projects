@@ -29,35 +29,25 @@ namespace MVVMEx04.ViewModel
             }
         }
 
-        public string Year
+        public int Year
         {
-            get { return DataObject.Year.ToString(); }
+            get { return DataObject.Year; }
             set
             {
-                if (int.TryParse(value, out var year))
-                {
-                    DataObject.Year = year;
-                }
-                else
-                {
-                    throw new ArgumentException("Illegal value in Year field");
-                }
+                DataObject.Year = value;
+                OnPropertyChanged();
             }
         }
 
-        public string RunningTimeInMins
+
+
+        public int RunningTimeInMins
         {
-            get { return DataObject.RunningTimeInMins.ToString(); }
+            get { return DataObject.RunningTimeInMins; }
             set
             {
-                if (int.TryParse(value, out var runTime))
-                {
-                    DataObject.RunningTimeInMins = runTime;
-                }
-                else
-                {
-                    throw new ArgumentException("Illegal value in RunningTimeInMins field");
-                }
+                    DataObject.RunningTimeInMins = value;
+                OnPropertyChanged();
             }
         }
 
