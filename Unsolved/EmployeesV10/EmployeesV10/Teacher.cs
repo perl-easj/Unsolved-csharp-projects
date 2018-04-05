@@ -1,6 +1,6 @@
 ﻿namespace EmployeesV10
 {
-    class Teacher
+    public class Teacher
     {
         #region Instance fields
         private string _name;

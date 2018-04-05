@@ -1,6 +1,6 @@
 ﻿namespace EmployeesV10
 {
-    class ITSupporter
+    public class ITSupporter
     {
         #region Instance fields
         private string _name;
