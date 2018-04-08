@@ -6,8 +6,8 @@
     /// </summary>
     public class Axe : Weapon
     {
-        public const int AxeMinDamage = 20;
-        public const int AxeMaxDamage = 50;
+        public const int InitialAxeMinDamage = 20;
+        public const int InitialAxeMaxDamage = 50;
 
         #region Constructor
         public Axe(string description) : base(description, 20, 50)
@@ -36,8 +36,8 @@
         /// </summary>
         public void Sharpen()
         {
-            MinDamage = AxeMinDamage;
-            MaxDamage = AxeMaxDamage;
+            MinDamage = InitialAxeMinDamage;
+            MaxDamage = InitialAxeMaxDamage;
         } 
         #endregion
     }

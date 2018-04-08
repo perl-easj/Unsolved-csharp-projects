@@ -17,7 +17,9 @@ namespace Yatzy.Evaluators
 
             foreach (var dieCount in diceCountByValue)
             {
-                score = score + dieCount.Key * dieCount.Value;
+                int faceValue = dieCount.Key;
+                int noOfDice = dieCount.Value;
+                score = score + faceValue * noOfDice;
             }
 
             return score;

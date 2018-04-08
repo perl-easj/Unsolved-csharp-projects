@@ -1,4 +1,4 @@
-﻿using PvPSimulator.Player;
+﻿using PvPSimulator.Players;
 
 namespace PvPSimulator.PlayerFactory
 {

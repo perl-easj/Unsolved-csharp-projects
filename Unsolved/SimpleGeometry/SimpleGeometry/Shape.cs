@@ -24,7 +24,8 @@ namespace SimpleGeometry
 
         public static double FindTotalArea(List<Shape> shapes)
         {
-            return 0; // This needs to be changed
+            // This needs to be changed
+            return 0;
         }
     }
 }

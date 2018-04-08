@@ -1,4 +1,4 @@
-﻿namespace PvPSimulator.Player
+﻿namespace PvPSimulator.Players
 {
     /// <summary>
     /// Interface defining constant information

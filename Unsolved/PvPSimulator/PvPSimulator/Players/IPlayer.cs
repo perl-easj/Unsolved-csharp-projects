@@ -1,6 +1,6 @@
 ﻿using PvPSimulator.Tactics;
 
-namespace PvPSimulator.Player
+namespace PvPSimulator.Players
 {
     /// <summary>
     /// Interface for a Player, i.e. a participant

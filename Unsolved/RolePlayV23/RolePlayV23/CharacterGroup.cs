@@ -5,7 +5,7 @@ namespace RolePlayV23
     /// <summary>
     /// This class represents a group of game characters
     /// </summary>
-    class CharacterGroup
+    public class CharacterGroup
     {
         #region Instance fields
         private List<Character> _group;

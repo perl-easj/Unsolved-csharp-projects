@@ -1,6 +1,6 @@
 ﻿using Windows.UI;
 using Windows.UI.Xaml.Media;
-using PvPSimulator.Player;
+using PvPSimulator.Players;
 
 namespace PvPSimulator.ViewModel
 {
@@ -10,20 +10,20 @@ namespace PvPSimulator.ViewModel
     /// Note that the class does not implement INotifyPropertyChanged,
     /// since all of its properties are read-only.
     /// </summary>
-    public class PlayerInfoViewModel
+    public class PlayerViewModel
     {
         #region Instance fields
         private IPlayer _player;
         #endregion
 
         #region Constructor
-        public PlayerInfoViewModel(IPlayer player)
+        public PlayerViewModel(IPlayer player)
         {
             _player = player;
         }
         #endregion
 
-        #region Properties
+        #region Public properties used for Data Binding
         /// <summary>
         /// Returns the name of the player
         /// </summary>

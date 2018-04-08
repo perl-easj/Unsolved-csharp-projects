@@ -4,14 +4,14 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using PvPSimulator.Commands;
 using PvPSimulator.Model;
-using PvPSimulator.Player;
+using PvPSimulator.Players;
 using PvPSimulator.Tactics;
 using PvPSimulator.Utility;
 
 namespace PvPSimulator.ViewModel
 {
     /// <summary>
-    /// View model for a battle, used for Data Binding in a view. 
+    /// View model for a PvP battle, used for Data Binding in a view. 
     /// The view model refers to a single BattleModel object.
     /// Note that the view model creates the BattleModel object.
     /// </summary>
@@ -51,7 +51,7 @@ namespace PvPSimulator.ViewModel
         }
         #endregion
 
-        #region Properties
+        #region Public properties used for Data Binding
         /// <summary>
         /// Returns entire Dictionary of command objects.
         /// Used for Data Binding in view.
@@ -85,16 +85,16 @@ namespace PvPSimulator.ViewModel
         }
 
         /// <summary>
-        /// Returns a Dictionary of PlayerInfoViewModel objects.
+        /// Returns a Dictionary of PlayerViewModel objects.
         /// Used for Data Binding in view.
         /// </summary>
-        public Dictionary<string, PlayerInfoViewModel> PlayerInfo
+        public Dictionary<string, PlayerViewModel> PlayerInfo
         {
             get
             {
-                Dictionary<string, PlayerInfoViewModel> info = new Dictionary<string, PlayerInfoViewModel>();
-                info.Add(PlayerAID, new PlayerInfoViewModel(PlayerA));
-                info.Add(PlayerBID, new PlayerInfoViewModel(PlayerB));
+                Dictionary<string, PlayerViewModel> info = new Dictionary<string, PlayerViewModel>();
+                info.Add(PlayerAID, new PlayerViewModel(PlayerA));
+                info.Add(PlayerBID, new PlayerViewModel(PlayerB));
 
                 return info;
             }
@@ -120,34 +120,36 @@ namespace PvPSimulator.ViewModel
 
         /// <summary>
         /// Get/set current tactics for Player A. Current mapping is:
-        /// true = Offensive tactics
-        /// false = Defensive tactics
+        /// true = Default tactics
+        /// false = Alternative tactics
         /// </summary>
         public bool TacticsSettingPlayerA
         {
-            get { return PlayerA.CurrentTacticsType == TacticsType.Offensive; }
+            get { return PlayerA.CurrentTacticsType == _model.DefaultTacticsInfo.Type; }
             set
             {
-                ITacticsInfo tactics = value ? (ITacticsInfo)new OffensiveTactics() : new DefensiveTactics();
+                ITacticsInfo tactics = value ? _model.DefaultTacticsInfo : _model.AlternativeTacticsInfo;
                 _model.SetPlayerTactics(BattleModel.PlayerID.A, tactics);
             }
         }
 
         /// <summary>
         /// Get/set current tactics for Player B. Current mapping is:
-        /// true = Offensive tactics
-        /// false = Defensive tactics
+        /// true = Default tactics
+        /// false = Alternative tactics
         /// </summary>
         public bool TacticsSettingPlayerB
         {
-            get { return PlayerB.CurrentTacticsType == TacticsType.Offensive; }
+            get { return PlayerB.CurrentTacticsType == _model.DefaultTacticsInfo.Type; }
             set
             {
-                ITacticsInfo tactics = value ? (ITacticsInfo)new OffensiveTactics() : new DefensiveTactics();
+                ITacticsInfo tactics = value ? _model.DefaultTacticsInfo : _model.AlternativeTacticsInfo;
                 _model.SetPlayerTactics(BattleModel.PlayerID.B, tactics);
             }
         }
+        #endregion
 
+        #region Private properties
         /// <summary>
         /// Gets Player A from model (just a convenient shorthand).
         /// </summary>
@@ -162,7 +164,7 @@ namespace PvPSimulator.ViewModel
         private IPlayer PlayerB
         {
             get { return _model.GetPlayer(BattleModel.PlayerID.B); }
-        }
+        } 
         #endregion
 
         #region Methods

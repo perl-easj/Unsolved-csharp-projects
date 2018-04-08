@@ -11,9 +11,12 @@ namespace Yatzy
     /// </summary>
     public class GameManager
     {
+        #region Instance fields
         private DiceCup _cup;
         private Dictionary<string, IDiceEvaluator> _diceEvaluators;
+        #endregion
 
+        #region Constructor
         public GameManager(int numberOfDice, int noOfFaces)
         {
             _cup = new DiceCup(numberOfDice, noOfFaces);
@@ -22,7 +25,9 @@ namespace Yatzy
             _diceEvaluators.Add("Chance", new ChanceEvaluator());
             _diceEvaluators.Add("One Pair", new OnePairEvaluator());
         }
+        #endregion
 
+        #region Methods
         public void Run()
         {
             // Test: Roll dice 10 times, and run all evaluators for each roll
@@ -37,11 +42,12 @@ namespace Yatzy
                 {
                     string evalDescription = eval.Key;
                     IDiceEvaluator diceEval = eval.Value;
-                    Console.WriteLine($"{evalDescription} evaluated to {diceEval.Evaluate(_cup.DiceCountByValue)} points");
+                    Console.WriteLine($"{evalDescription} evaluated to {diceEval.Evaluate(_cup.DiceCountByFaceValue)} points");
                 }
 
                 Console.WriteLine();
             }
-        }
+        } 
+        #endregion
     }
 }

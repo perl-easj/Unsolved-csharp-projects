@@ -2,9 +2,8 @@
 {
     /// <summary>
     /// Defines an interface for a "battle tactic".
-    /// A tactic is specified by a type (offensive
-    /// or defensive), and corresponding values of
-    /// attack and defence factors.
+    /// A tactic is specified by a type enumeration, and
+    /// corresponding values of attack and defence factors.
     /// </summary>
     public interface ITacticsInfo
     {

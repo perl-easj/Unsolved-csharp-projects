@@ -6,7 +6,7 @@
     public enum WeaponType
     {
         Magic,
-        Meele,
+        Melee,
         Ranged
     }
 }

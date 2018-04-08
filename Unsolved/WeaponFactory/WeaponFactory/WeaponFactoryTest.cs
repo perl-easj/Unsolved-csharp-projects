@@ -24,11 +24,11 @@ namespace WeaponFactory
 
         private static void TestWeaponFactory(IWeaponFactory factory)
         {
-            IWeapon meeleWeapon = factory.Create(WeaponType.Meele);
+            IWeapon meleeWeapon = factory.Create(WeaponType.Melee);
             IWeapon rangedWeapon = factory.Create(WeaponType.Ranged);
             IWeapon magicWeapon = factory.Create(WeaponType.Magic);
 
-            Console.WriteLine($"Meele Weapon: {meeleWeapon}");
+            Console.WriteLine($"Melee Weapon: {meleeWeapon}");
             Console.WriteLine($"Ranged Weapon: {rangedWeapon}");
             Console.WriteLine($"Magic Weapon: {magicWeapon}");
         }

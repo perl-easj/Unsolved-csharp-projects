@@ -1,6 +1,6 @@
 ﻿using System;
 using PvPSimulator.Config;
-using PvPSimulator.Player;
+using PvPSimulator.Players;
 using PvPSimulator.Tactics;
 using PvPSimulator.Utility;
 
@@ -20,6 +20,7 @@ namespace PvPSimulator.Model
         private IPlayer _playerA;
         private IPlayer _playerB;
 
+        private TacticsData _tacticsData;
         private bool _tacticsLockedA;
         private bool _tacticsLockedB;
         private bool _turn;
@@ -28,15 +29,8 @@ namespace PvPSimulator.Model
         #region Constructor
         public BattleModel()
         {
-            _playerA = GameConfiguration.Instance.Factory.CreatePlayerA();
-            _playerB = GameConfiguration.Instance.Factory.CreatePlayerB();
-
-            _playerA.CurrentTactics = new OffensiveTactics();
-            _playerB.CurrentTactics = new OffensiveTactics();
-
-            _tacticsLockedA = false;
-            _tacticsLockedB = false;
-            _turn = true;
+            _tacticsData = new TacticsData();
+            Reset();
         }
         #endregion
 
@@ -48,7 +42,23 @@ namespace PvPSimulator.Model
         public bool GameOver
         {
             get { return _playerA.IsDead || _playerB.IsDead; }
-        } 
+        }
+
+        /// <summary>
+        /// Returns the tactic designated as the "default" tactic
+        /// </summary>
+        public ITacticsInfo DefaultTacticsInfo
+        {
+            get { return _tacticsData.GeTacticsInfo(TacticsType.Offensive); }
+        }
+
+        /// <summary>
+        /// Returns the tactic designated as the "alternative" tactic
+        /// </summary>
+        public ITacticsInfo AlternativeTacticsInfo
+        {
+            get { return _tacticsData.GeTacticsInfo(TacticsType.Defensive); }
+        }
         #endregion
 
         #region Methods
@@ -116,16 +126,21 @@ namespace PvPSimulator.Model
         }
 
         /// <summary>
-        /// Reset entire game, i.e. reset both players
-        /// and clear the battle log.
+        /// Reset entire game
         /// </summary>
         public void Reset()
         {
-            _playerA.Reset();
-            _playerB.Reset();
+            _playerA = GameConfiguration.Instance.Factory.CreatePlayerA();
+            _playerB = GameConfiguration.Instance.Factory.CreatePlayerB();
+
+            _playerA.CurrentTactics = _tacticsData.GeTacticsInfo(TacticsType.Offensive);
+            _playerB.CurrentTactics = _tacticsData.GeTacticsInfo(TacticsType.Offensive);
+
+            _tacticsLockedA = false;
+            _tacticsLockedB = false;
+            _turn = true;
 
             BattleLog.Instance.Reset();
-            _turn = true;
 
             OnBattleModelChanged();
         } 

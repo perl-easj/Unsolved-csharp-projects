@@ -1,7 +1,7 @@
 ﻿using PvPSimulator.Tactics;
 using PvPSimulator.Utility;
 
-namespace PvPSimulator.Player
+namespace PvPSimulator.Players
 {
     /// <summary>
     /// Base class for player. Dynamic information about the player is
@@ -17,10 +17,10 @@ namespace PvPSimulator.Player
         #endregion
 
         #region Constructor
-        public Player(string name, string type, int initialHitPoints, double baseDamage)
+        public Player(string name, string type, int initialHitPoints, double baseDamage, ITacticsInfo tactics)
         {
             Info = new PlayerInfo(name, type, initialHitPoints, baseDamage);
-            _tactics = new NeutralTactics();
+            _tactics = tactics;
             Reset();
         }
         #endregion

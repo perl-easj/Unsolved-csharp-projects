@@ -18,11 +18,14 @@ namespace Yatzy.Evaluators
 
             foreach (var dieCount in diceCountByValue)
             {
+                int faceValue = dieCount.Key;
+                int noOfDice = dieCount.Value;
+
                 // If this is a pair (first condition)
                 // with better score than seen so far (second condition)
-                if ((dieCount.Value >= 2) && (dieCount.Key * 2 > score))
+                if ((noOfDice >= 2) && ((faceValue * 2) > score))
                 {
-                    score = dieCount.Key * 2;
+                    score = faceValue * 2;
                 }
             }
 

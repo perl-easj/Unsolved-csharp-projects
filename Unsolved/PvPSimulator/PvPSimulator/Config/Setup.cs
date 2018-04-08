@@ -1,5 +1,5 @@
-﻿using PvPSimulator.Player;
-using PvPSimulator.PlayerFactory;
+﻿using PvPSimulator.PlayerFactory;
+using PvPSimulator.Players;
 
 namespace PvPSimulator.Config
 {
@@ -32,7 +32,7 @@ namespace PvPSimulator.Config
         #region Methods
         public void Init()
         {
-            GameConfiguration.Instance.Factory = new DefaultPlayerFactory(new Paladin("Illume"), new Wizard("Morleen"));
+            GameConfiguration.Instance.Factory = new RandomisedPlayerFactory();
         } 
         #endregion
     }

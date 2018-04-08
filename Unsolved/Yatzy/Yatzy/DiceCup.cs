@@ -8,9 +8,12 @@ namespace Yatzy
     /// </summary>
     public class DiceCup
     {
+        #region Instance fields
         List<Die> _dice;
         private int _noOfFaces;
+        #endregion
 
+        #region Constructor
         public DiceCup(int numberOfDice, int noOfFaces)
         {
             _dice = new List<Die>();
@@ -23,7 +26,55 @@ namespace Yatzy
                 _dice.Add(new Die(noOfFaces));
             }
         }
+        #endregion
 
+        #region Properties
+        /// <summary>
+        /// Returns the dice face values as a simple list.
+        /// </summary>
+        public List<int> DiceFaceValues
+        {
+            get
+            {
+                List<int> diceValues = new List<int>();
+
+                foreach (Die d in _dice)
+                {
+                    diceValues.Add(d.FaceValue);
+                }
+
+                return diceValues;
+            }
+        }
+
+        /// <summary>
+        /// Returns the dice face values as (value -> count) pairs.
+        /// The dice face values 2, 3, 6, 6, 2, 6
+        /// will be returned as
+        /// ((1 -> 0), (2 -> 2), (3 -> 1), (4 -> 0), (5 -> 0), (6 -> 3))
+        /// </summary>
+        public Dictionary<int, int> DiceCountByFaceValue
+        {
+            get
+            {
+                Dictionary<int, int> diceCountByFaceValue = new Dictionary<int, int>();
+
+                for (int i = 1; i <= _noOfFaces; i++)
+                {
+                    diceCountByFaceValue.Add(i, 0);
+                }
+
+                foreach (Die d in _dice)
+                {
+                    diceCountByFaceValue[d.FaceValue]++;
+                }
+
+                return diceCountByFaceValue;
+            }
+        } 
+        #endregion
+
+        #region Methods
         /// <summary>
         /// Shake the dice cup, i.e. roll all dice in the cup.
         /// </summary>
@@ -32,50 +83,6 @@ namespace Yatzy
             foreach (Die d in _dice)
             {
                 d.RollDie();
-            }
-        }
-
-        /// <summary>
-        /// Returns the dice values as a simple list.
-        /// </summary>
-        public List<int> DiceValues
-        {
-            get
-            {
-                List<int> diceValues = new List<int>();
-
-                foreach (Die d in _dice)
-                {
-                    diceValues.Add(d.Value);
-                }
-
-                return diceValues;
-            }
-        }
-
-        /// <summary>
-        /// Returns the dice values as (value, count) pairs.
-        /// The dice values 2, 3, 6, 6, 2, 6
-        /// will be returned as
-        /// ((1,0), (2,2), (3,1), (4,0), (5,0), (6,3))
-        /// </summary>
-        public Dictionary<int, int> DiceCountByValue
-        {
-            get
-            {
-                Dictionary<int, int> diceCountByValue = new Dictionary<int, int>();
-
-                for (int i = 1; i <= _noOfFaces; i++)
-                {
-                    diceCountByValue.Add(i,0);
-                }
-
-                foreach (Die d in _dice)
-                {
-                    diceCountByValue[d.Value]++;
-                }
-
-                return diceCountByValue;
             }
         }
 
@@ -89,10 +96,11 @@ namespace Yatzy
 
             foreach (Die d in _dice)
             {
-                diceStr += $" {d.Value} ";
+                diceStr += $" {d.FaceValue} ";
             }
 
             return diceStr;
-        }
+        } 
+        #endregion
     }
 }
