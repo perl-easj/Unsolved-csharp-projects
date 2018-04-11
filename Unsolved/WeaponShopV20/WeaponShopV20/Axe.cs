@@ -10,7 +10,7 @@
         public const int InitialAxeMaxDamage = 50;
 
         #region Constructor
-        public Axe(string description) : base(description, 20, 50)
+        public Axe(string description) : base(description, InitialAxeMinDamage, InitialAxeMaxDamage)
         {
         }
         #endregion
