@@ -51,7 +51,7 @@
         </CommandBar>
     </Page.BottomAppBar>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource SystemControlAcrylicWindowBrush}">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" MinWidth="200"/>
