@@ -36,6 +36,8 @@
             <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Memo" Content="Movies" Tag="OpenMovieView"/>
             <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="People" Content="Theaters" Tag="OpenTheaterView"/>
             <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="OtherUser" Content="Shows" Tag="OpenShowView"/>
+            <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Document" Content="Tickets" Tag="OpenTicketView"/>
+            <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Shop" Content="Buy Ticket" Tag="OpenBuyTicketFlow"/>
         </NavigationView.MenuItems>
 
         <Frame x:Name="AppFrame">

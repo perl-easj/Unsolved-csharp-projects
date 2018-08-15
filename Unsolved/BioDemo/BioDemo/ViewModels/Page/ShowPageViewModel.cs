@@ -2,7 +2,7 @@
 using BioDemo.Models.App;
 using BioDemo.ViewModels.Base;
 using BioDemo.ViewModels.Data;
-using Data.Transformed.Interfaces;
+using Data.InMemory.Interfaces;
 
 namespace BioDemo.ViewModels.Page
 {
@@ -13,7 +13,7 @@ namespace BioDemo.ViewModels.Page
     public class ShowPageViewModel : PageViewModelAppBase<Show>
     {
         #region Constructor
-        public ShowPageViewModel() : base(DomainModel.Instance.Shows)
+        public ShowPageViewModel() : base(DomainModel.Instance.ShowCatalog)
         {
         }
         #endregion

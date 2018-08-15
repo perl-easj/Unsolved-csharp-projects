@@ -56,16 +56,5 @@ namespace BioDemo.ViewModels.Data
             get { return $"{LengthInMins} mins.   Age {AgeLimit}+"; }
         }
         #endregion
-
-        #region Methods
-        /// <summary>
-        /// This override is needed to display movies properly
-        /// in the Show view.
-        /// </summary>
-        public override string ToString()
-        {
-            return HeaderText;
-        } 
-        #endregion
     }
 }

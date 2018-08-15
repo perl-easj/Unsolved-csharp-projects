@@ -13,56 +13,30 @@ namespace BioDemo.Data.Domain
     /// </summary>
     public class Show : DomainAppBase
     {
-        #region Instance fields
-        private int _movieKey;
-        private int _theaterKey;
-        private DateTime _showDate;
-        private TimeSpan _showTime;
-        #endregion
-
         #region Properties
+        public DateTime DateForShow { get; set; }
+        public TimeSpan TimeForShow { get; set; }
+        public int MovieKey { get; set; }
+        public int TheaterKey { get; set; }
+
         public Movie MovieForShow
         {
-            get { return DomainModel.Instance.Movies.Read(_movieKey); }
+            get { return DomainModel.Instance.MovieCatalog.Read(MovieKey); }
         }
 
         public Theater TheaterForShow
         {
-            get { return DomainModel.Instance.Theaters.Read(_theaterKey); }
-        }
-
-        public DateTime DateForShow
-        {
-            get { return _showDate; }
-            set { _showDate = value; }
-        }
-
-        public TimeSpan TimeForShow
-        {
-            get { return _showTime; }
-            set { _showTime = value; }
-        }
-
-        public int MovieKey
-        {
-            get { return _movieKey; }
-            set { _movieKey = value; }
-        }
-
-        public int TheaterKey
-        {
-            get { return _theaterKey; }
-            set { _theaterKey = value; }
+            get { return DomainModel.Instance.TheaterCatalog.Read(TheaterKey); }
         }
         #endregion
 
         #region Methods
         public override void SetDefaultValues()
         {
-            _movieKey = NullKey;
-            _theaterKey = NullKey;
-            _showDate = DateTime.Now;
-            _showTime = DateTime.Now.TimeOfDay;
+            MovieKey = NullKey;
+            TheaterKey = NullKey;
+            DateForShow = DateTime.Now;
+            TimeForShow = DateTime.Now.TimeOfDay;
         } 
         #endregion
     }

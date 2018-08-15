@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using BioDemo.Data.Domain;
-using BioDemo.Models.App;
 using BioDemo.ViewModels.Base;
+using BioDemo.ViewModels.Page;
+using Data.InMemory.Interfaces;
 
 namespace BioDemo.ViewModels.Data
 {
@@ -11,63 +13,64 @@ namespace BioDemo.ViewModels.Data
     /// properties for single-object Data Binding in the Show view.
     /// This class is a bit more complex, due to the use of combo-boxes
     /// in the Show view, to display lists of movies and theaters.
+    /// These lists are retrieved from Page View Model objects for
+    /// Movie and Theater, respectively.
     /// </summary>
     public class ShowDataViewModel : DataViewModelAppBase<Show>
     {
         #region Instance fields
-        private MovieDataViewModel _selectedMovie;
-        private TheaterDataViewModel _selectedTheater;
-
-        private ObservableCollection<MovieDataViewModel> _movies;
-        private ObservableCollection<TheaterDataViewModel> _theaters;
+        private MoviePageViewModel _moviePVM;
+        private TheaterPageViewModel _theaterPVM;
         #endregion
 
         #region Constructor
         public ShowDataViewModel(Show obj) : base(obj)
         {
-            _movies = GenerateMovieList();
-            _theaters = GenerateTheaterList();
-            _selectedMovie = FindSelectedMovie(_movies, obj.MovieKey);
-            _selectedTheater = FindSelectedTheater(_theaters, obj.TheaterKey);
+            _moviePVM = new MoviePageViewModel();
+            _theaterPVM = new TheaterPageViewModel();
+            SelectedMovie = _moviePVM.ItemCollection.FirstOrDefault(e => e.DataObject.Key == obj.MovieKey);
+            SelectedTheater = _theaterPVM.ItemCollection.FirstOrDefault(e => e.DataObject.Key == obj.TheaterKey);
         }
         #endregion
 
         #region Properties
-        public ObservableCollection<MovieDataViewModel> Movies
+        public ObservableCollection<IDataWrapper<Movie>> Movies
         {
-            get { return _movies; }
+            get { return _moviePVM.ItemCollection; }
         }
 
-        public ObservableCollection<TheaterDataViewModel> Theaters
+        public ObservableCollection<IDataWrapper<Theater>> Theaters
         {
-            get { return _theaters; }
+            get { return _theaterPVM.ItemCollection; }
         }
 
-        public MovieDataViewModel SelectedMovie
+        public IDataWrapper<Movie> SelectedMovie
         {
-            get { return _selectedMovie; }
+            get { return _moviePVM.ItemSelected; }
             set
             {
-                if (value != null)
+                _moviePVM.ItemSelected = value;
+
+                if (_moviePVM.ItemSelected != null)
                 {
-                    _selectedMovie = value;
-                    DataObject.MovieKey = _selectedMovie.DataObject.Key;
+                    DataObject.MovieKey = _moviePVM.ItemSelected.DataObject.Key;
+                    OnPropertyChanged();
                 }
-                OnPropertyChanged();
             }
         }
 
-        public TheaterDataViewModel SelectedTheater
+        public IDataWrapper<Theater> SelectedTheater
         {
-            get { return _selectedTheater; }
+            get { return _theaterPVM.ItemSelected; }
             set
             {
-                if (value != null)
+                _theaterPVM.ItemSelected = value;
+
+                if (_theaterPVM.ItemSelected != null)
                 {
-                    _selectedTheater = value;
-                    DataObject.TheaterKey = _selectedTheater.DataObject.Key;
+                    DataObject.TheaterKey = _theaterPVM.ItemSelected.DataObject.Key;
+                    OnPropertyChanged();
                 }
-                OnPropertyChanged();
             }
         }
 
@@ -99,63 +102,6 @@ namespace BioDemo.ViewModels.Data
         public override string ContentText
         {
             get { return $"{DateForShow.Date.ToLongDateString()} @ {TimeForShow.Hours:00}:{TimeForShow.Minutes:00}"; }
-        }
-        #endregion
-
-        #region Methods
-        public override string ToString()
-        {
-            return HeaderText;
-        }
-
-        private ObservableCollection<MovieDataViewModel> GenerateMovieList()
-        {
-            ObservableCollection<MovieDataViewModel> movies = new ObservableCollection<MovieDataViewModel>();
-
-            foreach (var item in DomainModel.Instance.Movies.All)
-            {
-                movies.Add(new MovieDataViewModel(item));
-            }
-
-            return movies;
-        }
-
-        private ObservableCollection<TheaterDataViewModel> GenerateTheaterList()
-        {
-            ObservableCollection<TheaterDataViewModel> theaters = new ObservableCollection<TheaterDataViewModel>();
-
-            foreach (var item in DomainModel.Instance.Theaters.All)
-            {
-                theaters.Add(new TheaterDataViewModel(item));
-            }
-
-            return theaters;
-        }
-
-        private MovieDataViewModel FindSelectedMovie(ObservableCollection<MovieDataViewModel> movies, int key)
-        {
-            foreach (var item in movies)
-            {
-                if (item.DataObject.Key == key)
-                {
-                    return item;
-                }
-            }
-
-            return null;
-        }
-
-        private TheaterDataViewModel FindSelectedTheater(ObservableCollection<TheaterDataViewModel> theaters, int key)
-        {
-            foreach (var item in theaters)
-            {
-                if (item.DataObject.Key == key)
-                {
-                    return item;
-                }
-            }
-
-            return null;
         }
         #endregion
     }

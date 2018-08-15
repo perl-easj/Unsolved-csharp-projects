@@ -2,6 +2,7 @@
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using BioDemo.Models.App;
+using BioDemo.ViewModels.Commands;
 using Commands.Implementation;
 using ViewModel.App.Implementation;
 
@@ -62,35 +63,14 @@ namespace BioDemo.ViewModels.App
         /// </summary>
         public override void AddCommands()
         {
-            NavigationCommands.Add("OpenMovieView", new RelayCommand(() =>
-            {
-                AppFrame.Navigate(typeof(Views.Domain.MovieView));
-            }));
-
-            NavigationCommands.Add("OpenTheaterView", new RelayCommand(() =>
-            {
-                AppFrame.Navigate(typeof(Views.Domain.TheaterView));
-            }));
-
-            NavigationCommands.Add("OpenShowView", new RelayCommand(() =>
-            {
-                AppFrame.Navigate(typeof(Views.Domain.ShowView));
-            }));
-
-            NavigationCommands.Add("Quit", new RelayCommand(() =>
-            {
-                Application.Current.Exit();
-            }));
-
-            NavigationCommands.Add("Load", new RelayCommand(() =>
-            {
-                DomainModel.Instance.LoadAsync();
-            }));
-
-            NavigationCommands.Add("Save", new RelayCommand(() =>
-            {
-                DomainModel.Instance.SaveAsync();
-            }));
+            NavigationCommands.Add("OpenMovieView", new NavigationCommand(AppFrame, typeof(Views.Domain.MovieView)));
+            NavigationCommands.Add("OpenTheaterView", new NavigationCommand(AppFrame, typeof(Views.Domain.TheaterView)));
+            NavigationCommands.Add("OpenShowView", new NavigationCommand(AppFrame, typeof(Views.Domain.ShowView)));
+            NavigationCommands.Add("OpenTicketView", new NavigationCommand(AppFrame, typeof(Views.Domain.TicketView)));
+            NavigationCommands.Add("OpenBuyTicketFlow", new NavigationCommand(AppFrame, typeof(Views.Domain.BuyTicketViewStart)));
+            NavigationCommands.Add("Load", new LoadCommand());
+            NavigationCommands.Add("Save", new SaveCommand());
+            NavigationCommands.Add("Quit", new QuitCommand());
         } 
         #endregion
     }

@@ -56,16 +56,5 @@ namespace BioDemo.ViewModels.Data
             get { return $"{NoOfSeats} seats   3D: {(Supports3D ? "Yes" : "No")}"; }
         }
         #endregion
-
-        #region Methods
-        /// <summary>
-        /// This override is needed to display theaters properly
-        /// in the Show view.
-        /// </summary>
-        public override string ToString()
-        {
-            return HeaderText;
-        } 
-        #endregion
     }
 }

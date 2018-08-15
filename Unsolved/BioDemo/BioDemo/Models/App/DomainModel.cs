@@ -1,4 +1,5 @@
-﻿using BioDemo.Models.Doman;
+﻿using BioDemo.Data.Domain;
+using BioDemo.Models.Base;
 
 namespace BioDemo.Models.App
 {
@@ -8,12 +9,6 @@ namespace BioDemo.Models.App
     /// </summary>
     public class DomainModel
     {
-        #region Instance fields
-        private MovieCatalog _movieCatalog;
-        private TheaterCatalog _theaterCatalog;
-        private ShowCatalog _showCatalog;
-        #endregion
-
         #region Singleton implementation
         private static DomainModel _instance;
         public static DomainModel Instance
@@ -29,31 +24,36 @@ namespace BioDemo.Models.App
         #region Constructor
         private DomainModel()
         {
-            _movieCatalog = new MovieCatalog();
-            _theaterCatalog = new TheaterCatalog();
-            _showCatalog = new ShowCatalog();
+            MovieCatalog = new CatalogAppBase<Movie>();
+            TheaterCatalog = new CatalogAppBase<Theater>();
+            ShowCatalog = new CatalogAppBase<Show>();
+            TicketCatalog = new CatalogAppBase<Ticket>();
         }
         #endregion
 
         #region Properties
-        public MovieCatalog Movies { get { return _movieCatalog; } }
-        public TheaterCatalog Theaters { get { return _theaterCatalog; } }
-        public ShowCatalog Shows { get { return _showCatalog; } }
+        public CatalogAppBase<Movie> MovieCatalog { get; }
+        public CatalogAppBase<Theater> TheaterCatalog { get; }
+        public CatalogAppBase<Show> ShowCatalog { get; }
+        public CatalogAppBase<Ticket> TicketCatalog { get; }
+
         #endregion
 
         #region Persistency methods
         public async void LoadAsync()
         {
-            await _movieCatalog.LoadAsync();
-            await _theaterCatalog.LoadAsync();
-            await _showCatalog.LoadAsync();
+            await MovieCatalog.LoadAsync();
+            await TheaterCatalog.LoadAsync();
+            await ShowCatalog.LoadAsync();
+            await TicketCatalog.LoadAsync();
         }
 
         public async void SaveAsync()
         {
-            await _movieCatalog.SaveAsync();
-            await _theaterCatalog.SaveAsync();
-            await _showCatalog.SaveAsync();
+            await MovieCatalog.SaveAsync();
+            await TheaterCatalog.SaveAsync();
+            await ShowCatalog.SaveAsync();
+            await TicketCatalog.SaveAsync();
         }
         #endregion
     }
